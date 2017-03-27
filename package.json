@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.15.2",
+    "page": "^1.7.1",
     "pg": "^6.1.5"
   },
   "devDependencies": {},
