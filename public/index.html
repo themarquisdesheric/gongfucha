@@ -1,47 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gong Fu Cha</title>
-  <link type="text/css" rel="stylesheet" href="styles/base.css">
-  <link type="text/css" rel="stylesheet" href="styles/layout.css">
-  <link type="text/css" rel="stylesheet" href="styles/module.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gong Fu Cha</title>
+	<link type="text/css" rel="stylesheet" href="vendor/styles/meyer.css">
+	<link type="text/css" rel="stylesheet" href="styles/base.css">
+	<link type="text/css" rel="stylesheet" href="styles/layout.css">
+	<link type="text/css" rel="stylesheet" href="styles/module.css">
 </head>
+
 <body>
-  <header class="site-header clearfix">
-        <nav class="main-nav">
-            <h1 id="home">Welcome to Gongfucha</h1>
-            <h1>We're a group of gongfucha tea enthusiasts,dedicated to bringing you the best tea houses and shops for your gongfucha needs.</h1>
-            <div class="icon-menu"></div>
-          <ul>
-              <a href="/"><li class="tab" data-content="home">Home</li></a>
-              <a href="/about"><li class="tab" data-content="about">About</li></a>
-              <a href="/places"><li class="tab" data-content="portfolio">Places</li></a>
-              <a href="/submit"><li class="tab" data-content="submit">Submit</li>
-              </a>
-          </ul>
-      </nav>
-  </header>
-  <main>
-      <section id="places" class="tab-content">
-          <h2>Places</h2>
-          <!--Google Maps API goes here-->
-      </section>
-      <section id="about" class="tab-content">
-          <h2>About</h2>
-          <p>Gongfucha is a community of tea enthusiasts; we come together to celebrate good tea and tea ceremonies.</p>
-      </section>
-      <section id="contact" class="tab-content">
-          <h2>Submit</h2>
-          <p>We welcome new submissions from our users. Submit a new gongfucha tea shop, tea house or tea event here.</p>
-      </section>
-    </main>
-  <footer class="site-footer">
-      <p>&copy; Gongfucha| 2017</p>
-  </footer>
-<script src="scripts/models/model.js"></script>
-<script src="scripts/views/view.js"></script>
-<script src="scripts/controllers/controller.js"></script>
+	<header>
+		<nav>
+			<h1>Welcome to Gongfucha</h1>
+			<h2>We're a group of gongfucha tea enthusiasts,dedicated to bringing you the best tea houses and shops for your gongfucha
+				needs.</h2>
+
+			<ul>
+				<a href="/">
+					<li class="tab" data-content="home">Home</li>
+				</a>
+				<a href="/about">
+					<li class="tab" data-content="about">About</li>
+				</a>
+				<a href="/places">
+					<li class="tab" data-content="portfolio">Places</li>
+				</a>
+				<a href="/submit">
+					<li class="tab" data-content="submit">Submit</li>
+				</a>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section id="places" class="tab-content">
+			<h2>Places</h2>
+			<!-- GOOGLE MAPS API -->
+			<div id="map"></div>
+		</section>
+
+		<section id="about" class="tab-content">
+			<h2>About</h2>
+			<p>Gongfucha is a community of tea enthusiasts; we come together to celebrate good tea and tea ceremonies.</p>
+		</section>
+		
+		<section id="submit" class="tab-content">
+			<h2>Submit</h2>
+			<p>We welcome new submissions from our users. Submit a new gongfucha tea shop, tea house or tea event here.</p>
+		</section>
+	</main>
+
+	<footer>
+		<small>&copy; Gongfucha | 2017</small>
+	</footer>
+
+	<!-- VENDOR SCRIPTS -->
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+	<!-- SCRIPTS -->
+	<script src="scripts/models/model.js"></script>
+	<script src="scripts/views/view.js"></script>
+	<script src="scripts/controllers/controller.js"></script>
 </body>
 </html>
