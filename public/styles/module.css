@@ -2,11 +2,74 @@
   Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.
 */
 
+/*Nav*/
+
+header {
+  height: 400px;
+  width: 100%;
+  background-color: rgba(181, 181, 181, 0.5);
+  line-height: 1.5em;
+  overflow: hidden;
+}
+
+nav ul {
+  text-align: center;
+}
+
+nav ul li{
+  display: block;
+  margin: 30px;
+}
+
+#first-tab {
+  margin-top: 80px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  text-shadow: 1px 1px 1px cyan;
+}
+
+/*landing page*/
+
+#welcome-text {
+  margin: 15%; 
+  text-align: center;
+}
+
+#welcome-text h1 {
+  margin: 10%;
+}
+
 /*map styles*/
 
  #map {
         height: 800px;
         width: 100%;
        }
-       
 
+/*Media queries*/
+
+@media (min-width: 800px) {
+  header {
+    height: 100px;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+
+  #welcome-text {
+  margin: 2%; 
+  text-align: center;
+  }
+
+  #welcome-text h1 {
+  margin: 1.75%;
+  }
+  
+}
