@@ -27,6 +27,7 @@
   <main>
       <section id="places" class="tab-content">
           <h2>Places</h2>
+          <div id="map"></div>
           <!--Google Maps API goes here-->
       </section>
       <section id="about" class="tab-content">
@@ -44,5 +45,9 @@
 <script src="scripts/models/model.js"></script>
 <script src="scripts/views/view.js"></script>
 <script src="scripts/controllers/controller.js"></script>
+<script src="scripts/models/google_map.js"></script>  
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiJ4efQ1JPsrr3eb93hotrpOt4Qy-dvOI&callback=initMap">
+</script>
 </body>
 </html>
