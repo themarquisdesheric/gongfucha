@@ -8,6 +8,7 @@
 	<link type="text/css" rel="stylesheet" href="styles/base.css">
 	<link type="text/css" rel="stylesheet" href="styles/layout.css">
 	<link type="text/css" rel="stylesheet" href="styles/module.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -30,7 +31,30 @@
 		<section id="places" class="tab-content ">
 			<h2>Places</h2>
 			<!-- GOOGLE MAPS -->
-			<div id="map"></div>
+			<div id="map-parent">
+				<div id="map"></div>
+				<div id="sidebar" class="sidebar left collapsed">
+					<!-- Nav tabs -->
+					<div class="sidebar-tabs">
+							<ul role="tablist">
+									<li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+							</ul>
+							<ul role="tablist">
+									<li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+							</ul>
+					</div>
+					<!-- Tab panes -->
+					<div class="sidebar-content">
+							<div class="sidebar-pane" id="home">
+									<h1 class="sidebar-header">Gong Fa Cha Tea Shops<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+									<p>In Portland:</p>
+							</div>
+							<div class="sidebar-pane" id="settings">
+									<h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+							</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<section id="about" class="tab-content">
 			<h2>About</h2>
@@ -49,6 +73,7 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+	<script src="vendor/scripts/jquery.sidebar.min.js"></script>
 	<script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 	<!-- SCRIPTS -->
 	<script src="scripts/models/model.js"></script>
