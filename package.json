@@ -1,0 +1,25 @@
+{
+  "name": "gongfucha",
+  "version": "1.0.0",
+  "description": "tea",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pg": "^6.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeversSync/gongfucha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeversSync/gongfucha/issues"
+  },
+  "homepage": "https://github.com/NeversSync/gongfucha#readme"
+}
