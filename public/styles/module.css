@@ -63,12 +63,12 @@ nav ul li a:hover {
   }
 
   #welcome-text {
-  margin: 2%; 
-  text-align: center;
+    margin: 2%; 
+    text-align: center;
   }
 
   #welcome-text h1 {
-  margin: 1.75%;
+    margin: 1.75%;
   }
   
 }
