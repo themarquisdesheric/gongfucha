@@ -1,5 +1,5 @@
-(function(module) {
-  const model = {};
+// (function(module) {
+//   const model = {};
 
-  module.model = model;
-})(window);
+//   module.model = model;
+// })(window);
