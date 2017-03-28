@@ -66,7 +66,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-  background-color: darkturquoise;
+  background-color: rgba(52, 135, 184, .7);
 }
 
 #first-tab {
@@ -91,32 +91,34 @@ Landing Page
 }
 
 video { 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-    transition: 1s opacity;
-    }
-    .stopfade { 
-    opacity: .5;
-    }
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s opacity;
+  }
 
 #welcome-text {
   width: 70%;
   border-radius: 30px;
   background-color: rgba(136, 132, 140, .5);
   text-align: center;
-  margin: 0px auto; 
+  margin: 30% auto; 
+  text-shadow: .2px .2px 4px black;
 }
 
 #welcome-text h1 {
+  font-size: 1.4em;
   margin: 10%;
+}
+
+#welcome-text h3 {
+  font-size: 1em;
 }
 
 /*-----------
@@ -145,6 +147,7 @@ Media Queries
     line-height: 1em;
     font-size: .75em;
   }
+
   nav {
     position: absolute;
     width: 90%;
@@ -152,13 +155,18 @@ Media Queries
     top: 0;
     margin: 0px auto;
     margin-left: 90px;
-    display: none; 
+    display: inline-block;
     border-radius: 5px;
+    text-shadow: .5px .5px 2px grey;
   }
+
   nav ul li {
     border: none;
     display: inline-block;
-    width: 20%;
+    margin: 15px;
+    padding: 30px 30px;
+    width: 12%;
+    border-radius: 30px;
   }
 
   #hamburger {
@@ -175,15 +183,33 @@ Media Queries
   }
 
   #welcome-text {
-    margin: 15% auto; 
+    margin: 12% auto; 
     text-align: center; 
-  }
+    padding: 1%;
+    box-shadow: 0 3px 30px rgba(0,0,0, 0.3); }
 
   #welcome-text h1 {
-    margin: 1.75%; }
+    font-size: 2.5em;
+    margin: 1.75%; 
+  }
+
+  #welcome-text h3 {
+    font-size: 1.25em;
+    margin: 1.75%; 
+  }
+
+  #teapot-button {
+    border-radius: 50%;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 12% auto;
+    background-color: rgba(136, 132, 140, .5);
+  }
 
   #map-parent { 
     margin: 0 10%; }
+
   #map {
     height: 600px;
     box-shadow: 0 3px 14px rgba(0,0,0, 0.3); }
