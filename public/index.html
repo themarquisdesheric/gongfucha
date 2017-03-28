@@ -8,8 +8,10 @@
 	<link type="text/css" rel="stylesheet" href="styles/base.css">
 	<link type="text/css" rel="stylesheet" href="styles/layout.css">
 	<link type="text/css" rel="stylesheet" href="styles/module.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 <body>
+	<div id="hamburger"></div>
 	<header>
 		<nav>
 			<ul>
@@ -20,7 +22,7 @@
 			</ul>
 		</nav>
 	</header>
-	<main>
+	<main id="content">
 		<section>
 			<div id="welcome-text">
 				<h1>Welcome to Gong Fu Cha</h1>
@@ -28,7 +30,7 @@
 			</div>
 		</section>
 		<section id="places" class="tab-content ">
-			<h2>Places</h2>
+			<h2>Tea Locator</h2>
 			<!-- GOOGLE MAPS -->
 			<div id="map"></div>
 		</section>
@@ -53,6 +55,7 @@
 	<!-- SCRIPTS -->
 	<script src="scripts/models/model.js"></script>
 	<script src="scripts/views/view.js"></script>
+	<script src="scripts/views/homeView.js"></script>
 	<script src="scripts/controllers/controller.js"></script>
 	<script src="scripts/models/google_map.js"></script>  
 	<script async defer
