@@ -60,7 +60,6 @@ function initMap() {
   });
 
   let place = placesUrl(locations[0].title);
-
   $.get(place).done(function(response) {
     console.log(response);
   });
