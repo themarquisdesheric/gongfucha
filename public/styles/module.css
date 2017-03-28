@@ -85,46 +85,53 @@ Map Styles
   width: 100%;
 }
 
-/*Media queries*/
+/*-----------
+Media Queries
+------------*/
 
-@media (min-width: 800px) {
-  header {
-
-  }
-  
+@media (min-width: 800px) {  
   nav {
     margin: 20px 0px;
-    display: none;
-  }
-
+    display: none; }
   nav ul li {
     border-right: 1px solid white;
     display: inline-block;
     width: 20%;
-    border-bottom: none;
-  }
+    border-bottom: none; }
 
   #first-tab {
   border-left: 1px solid white;
-  border-top: none;
-  }
+  border-top: none; }
 
   #welcome-text {
     margin: 2%; 
-    text-align: center;
-  }
+    text-align: center; }
 
   #welcome-text h1 {
-    margin: 1.75%;
-  }
-  
+    margin: 1.75%; }
+
+  #map-parent { 
+    margin: 0 10%; }
+  #map {
+    height: 600px;
+    box-shadow: 0 3px 14px rgba(0,0,0, 0.3); }
 }
 
 /*-----------
 Submit & Forms
 ------------*/
-.formspacing { 
-  width: 48%; }
+form {
+  margin: 5% 0% 5% 0%; }
+
+.two-field-form { 
+  display: inline-block;
+  width: 45%;
+  margin: 5px 5px 5px 0px; }
+
+.three-field-form { 
+  display: inline-block;
+  width: 30%;
+  margin: 5px 5px 5px 0px; }
 
 .full-width {
   width: 100%;
@@ -154,3 +161,10 @@ legend {
   display: block;
   margin-bottom: .5rem;
   font-weight: 600; }
+
+.button:hover,
+.button:focus, {
+  color: #333;
+  background-color:#33C3F0;
+  border-color: #888;
+  outline: 0; }

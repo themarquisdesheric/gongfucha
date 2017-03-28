@@ -65,28 +65,49 @@
 		<section id="submit" class="tab-content">
 			<h2>Submit</h2>
 			<p>We welcome new submissions from our users. Submit a new Gong Fu Cha tea shop, tea house or tea event here.</p>
-			<h3>New Tea Location</h3>
 			<p>Enter your new tea house, shop, or location into the form below:</p>
-			<p>(NOTE: Please make any images 350 x 150)</p>
 			<form>
-				  <div><label for="shop-name">Shop Name</label>
-					<input class="formspacing" name="shop-name" placeholder="Shop Name" type="text">
-				  <label for="shop-name">Shop Website</label>
-					<input name="shop-url" placeholder="Shop Website" type="text">
-					<input name="shop-descrip" placeholder="Describe your shop!" type="text">
+				  <div class="full-width">
+						<div class="two-field-form">
+							<label for="shop-name">Shop Name</label>
+							<input class="full-width" name="shop-name" placeholder="Shop Name" type="text">
+						</div>
+						<div class="two-field-form">
+							<label for="shop-url">Shop Website</label>
+							<input class="full-width" name="shop-url" placeholder="Shop Website" type="text">
+						</div>
+					</div>
+					<div class="full-width">
+						<label for="shop-name">Description</label>
+						<input class="full-width" name="shop-descrip" placeholder="Describe your shop!" type="text">
 				  </div>
-					<div>
-					<input name="shop-address-street" placeholder="Shop Street" type="text">
+					<div class="full-width">
+						<label for="shop-name">Street Address</label>
+						<input class="full-width" name="shop-address-street" placeholder="Shop Street" type="text">
 					</div>
-					<div>
-					<input name="shop-address-city" placeholder="Shop City" type="text">
-					<input name="shop-address-state" placeholder="Shop State" type="text">
-					<input name="shop-address-zip" placeholder="Shop Zip" type="text">
+					<div class="full-width">
+						<div class="three-field-form">
+							<label for="shop-name">City</label>
+							<input class="full-width" name="shop-address-city" placeholder="Shop City" type="text">
+						</div><div class="three-field-form">
+							<label for="shop-name">State</label>
+							<input class="full-width" name="shop-address-state" placeholder="Shop State" type="text">
+						</div><div class="three-field-form">
+							<label for="shop-name">Zip</label>
+							<input class="full-width" name="shop-address-zip" placeholder="Shop Zip" type="text">
+						</div>
 					</div>
-					<div>
-					<input name="shop-hours" placeholder="Shop Hours" type="text">
-					<input name="shop-photos" type="img">
-					<input type="submit">
+				  <div class="full-width">
+						<div class="two-field-form">
+							<label for="shop-name">Phone</label>
+							<input class="full-width" name="shop-name" placeholder="Phone" type="text">
+						</div>
+						<div class="two-field-form">
+							<label for="shop-url">Email</label>
+							<input class="full-width" name="shop-url" placeholder="Email" type="text">
+						</div>
+					</div>
+					<input class="button" type="submit">
 			</form>
 		</section>
 	</main>
