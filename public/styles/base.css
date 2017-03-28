@@ -7,6 +7,8 @@ body {
   font-size: 1em;
   line-height: 2em;
   color: black;
+  overflow-x:hidden;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1 {
