@@ -3,12 +3,29 @@
 */
 
 /*-----------
-Sidebar & Map
+About
 ------------*/
-#map-parent {
-  position: relative;
+
+#about, #submit {
+  margin: 15%; }
+
+#about h2, #submit h2 {
+  margin: 6% 10%;
+  text-align: center; }
+
+#submit h3 {
+  margin-top: 5%;
+  text-align: center; }
+
+footer {
+  padding: 5% 10%;
+  text-align: center;
+  background-color: lightgray;
 }
 
+/*-----------
+Sidebar & Map
+------------*/
 .sidebar {
   position: absolute;
   top: 0;
