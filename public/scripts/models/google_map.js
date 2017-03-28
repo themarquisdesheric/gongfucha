@@ -13,7 +13,7 @@ const locations = [
     title: 'Heavens Tea, School of Tea Arts'
   }
 ];
-
+//this is how we ping the google geocode API with a shop name and it returns the latLng
 function geocodeUrl(title) {
   return `https://maps.googleapis.com/maps/api/geocode/json?address=${title}&key=${GOOGLE_GEOCODE_API_KEY}`;
 }
@@ -30,7 +30,6 @@ function initMap() {
     let url = geocodeUrl(locations[i].title, locations[i].city);
     //set marker for each shop
     $.get(url).done(function (response) {
-      console.log(response);
       //create marker for shop
       let marker = new google.maps.Marker({
         position: response.results[0].geometry.location,
@@ -48,5 +47,11 @@ function initMap() {
       });
     });
   }
+  //re-center map upon window resize
+  google.maps.event.addDomListener(window, 'resize', function() {
+    const center = map.getCenter();
+    google.maps.event.trigger(map, 'resize');
+    map.setCenter(center);
+  });
 }
 
