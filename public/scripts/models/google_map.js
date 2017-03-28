@@ -1,6 +1,7 @@
 'use strict';
 
 const GOOGLE_GEOCODE_API_KEY = 'AIzaSyB3ds8lw9KjCDvLxfBCj5EpU52-5nGUe_Q';
+const GOOGLE_PLACES_API_KEY = 'AIzaSyABR5dsVE6XNT0UOAKI_qmSC4_p0jPShQM';
 
 const locations = [
   {
@@ -18,6 +19,10 @@ function geocodeUrl(title) {
   return `https://maps.googleapis.com/maps/api/geocode/json?address=${title}&key=${GOOGLE_GEOCODE_API_KEY}`;
 }
 
+function placesUrl(title) {
+  return `https://maps.googleapis.com/maps/api/place/textsearch/xml?query=${title}&key=${GOOGLE_PLACES_API_KEY}`
+}
+
 function initMap() {
   //initialize map and center it
   const map = new google.maps.Map(document.getElementById('map'), {
@@ -27,7 +32,7 @@ function initMap() {
   });
   //loop through locations array and convert title to latLng
   for (let i = 0; i < locations.length; i++) {
-    let url = geocodeUrl(locations[i].title, locations[i].city);
+    let url = geocodeUrl(locations[i].title);
     //set marker for each shop
     $.get(url).done(function (response) {
       //create marker for shop
@@ -52,6 +57,12 @@ function initMap() {
     const center = map.getCenter();
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
+  });
+
+  let place = placesUrl(locations[0].title);
+
+  $.get(place).done(function(response) {
+    console.log(response);
   });
 }
 
