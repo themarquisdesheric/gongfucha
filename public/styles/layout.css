@@ -17,14 +17,20 @@ About
   margin: 15%; }
 
 #about h2, #submit h2 {
+  font-size: 40px;
   margin: 6% 10%;
   text-align: center; }
 
 #submit h3 {
+  font-size: 20px;
   margin-top: 5%;
   text-align: center; }
 
+.shopheader {
+  margin: 10px 0%; }
+
 .shopsection {
+  line-height: 140%;
   margin: 5% 0%; }
 
 .spacer {
