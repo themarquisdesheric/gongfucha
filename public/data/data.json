@@ -1,38 +1,32 @@
 [
   {
-    "shop-name": "Fly Awake Tea",
-    "shop-url": "http://flyawakepdx.com/",
+    "shopName": "Fly Awake Tea",
+    "shopUrl": "http://flyawakepdx.com/",
     "description": "<p>Fly Awake is a secret spot in N Portland. Our Chinese teas are phenomenal, pu-ehr cakes galore, a tea aficionados paradises. We also make chai like your Indian Grandma. We also carry organic herbal dream teas and more from Brown Bear Herbs. We're not messing around. Come by and experience the magic and fly awake.</p>",
-    "address-street": "909 N Beech St.",
-    "address-city": "Portland",
-    "address-state": "OR",
-    "address-zip": "97227",
-    "phone": "555-555-5555",
-    "email": "teahouse@fake.com",
-    "hours": "12:00p - 8:00p everyday"
+    "street": "909 N Beech St.",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97227",
+    "category": "tea house"
   },
   {
-    "shop-name": "Heavens Tea, School of Tea Arts",
-    "shop-url": "http://www.heavenstea.com/",
+    "shopName": "Heavens Tea, School of Tea Arts",
+    "shopUrl": "http://www.heavenstea.com/",
     "description": "<p>Tea is about making every moment special. We offer Public Tea Classes, Rare Tastings, Transformational Tea Journeys, Private Healing Sessions, Meditation and Tea in Nature outings. We are devoted to giving you an experience of Chinese tea in relation to self cultivation, meditation, healing and in support of your creative expression in the world.</p>",
-    "address-street": "122nd Ave and SE Foster",
-    "address-city": "Portland",
-    "address-state": "OR",
-    "address-zip": "97215",
-    "phone": "555-555-5555",
-    "email": "teahouse@fake.com",
-    "hours": "By Appointment"
+    "street": "122nd Ave and SE Foster",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97215",
+    "category": "tea house"
   },
   {
-    "shop-name": "Tao of Tea",
-    "shop-url": "http://www.taooftea.com/",
+    "shopName": "Tao of Tea",
+    "shopUrl": "http://www.taooftea.com/",
     "description": "<p>Our focus is to offer teas from the Camellia Sinensis tea plants. Similar to grapes, the tea plants have many regions, varietals, processing methods, and seasons. More importantly, good tea sells out very quickly and is seldom made in large quantities. We as merchants are particular in working with growers to secure exceptional-tasting leaf each season. We pledge to share with you the artistry of the leaves, their origin, processing method, flavor vocabulary, and spirit.</p>",
-    "address-street": "3430 SE Belmont St",
-    "address-city": "Portland",
-    "address-state": "OR",
-    "address-zip": "97214",
-    "phone": "555-555-5555",
-    "email": "teahouse@fake.com",
-    "hours": "11:00p - 10:00p everyday"
+    "street": "3430 SE Belmont St",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97214",
+    "category": "tea shop"
   }
 ]
