@@ -54,6 +54,7 @@ function initMap() {
     let url = placesUrl(locations[i].title);
     //send GET request to Places API to obtain place ID
     $.get(`https://crossorigin.me/${url}`).done(function (response) {
+      console.log(response);
       let placeId = response.results[0].place_id;
       let placeIdUrl = placeDetailsUrl(placeId);
       //send GET request to Places Details API for shop info
