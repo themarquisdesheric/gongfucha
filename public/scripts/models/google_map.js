@@ -20,7 +20,11 @@ function geocodeUrl(title) {
 }
 
 function placesUrl(title) {
-  return `https://maps.googleapis.com/maps/api/place/textsearch/xml?query=${title}&key=${GOOGLE_PLACES_API_KEY}`
+  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${title}&key=${GOOGLE_PLACES_API_KEY}`
+}
+
+function placeDetailsUrl(id) {
+  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${GOOGLE_PLACES_API_KEY}`
 }
 
 function initMap() {
@@ -35,6 +39,7 @@ function initMap() {
     let url = geocodeUrl(locations[i].title);
     //set marker for each shop
     $.get(url).done(function (response) {
+      // console.log('Geocode response: ', response);
       //create marker for shop
       let marker = new google.maps.Marker({
         position: response.results[0].geometry.location,
@@ -59,9 +64,17 @@ function initMap() {
     map.setCenter(center);
   });
 
+
+
+  //working, now need to incorporate this into the for loop and replace geocoding API
   let place = placesUrl(locations[0].title);
-  $.get(place).done(function(response) {
-    console.log(response);
+
+  $.get(`https://crossorigin.me/${place}`).done(function(response) {
+    let placeId = response.results[0].place_id;
+    let placeIdUrl = placeDetailsUrl(placeId);
+    $.get(`https://crossorigin.me/${placeIdUrl}`).done(function(response) {
+      console.log('Place Details response: ', response);
+    });
   });
 }
 
