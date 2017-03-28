@@ -23,8 +23,8 @@ header {
 
 #hamburger:hover {
   box-shadow: 0px 0px 10px 3px cyan;
-  animation-duration: 1s;
   animation-name: hamburger;
+  animation-duration: 300ms;
   animation-direction: alternate;
   animation-fill-mode: forwards;
 }
@@ -45,7 +45,7 @@ nav {
   margin-top: 5%;
   display: none;
   position: relative;
-  z-index: -2;
+  /*z-index: -2;*/
   top: 0;
   left: 0;
   width: 100%;
@@ -57,7 +57,6 @@ nav ul {
 }
 
 nav ul li {
-  background-color: rgba(136, 132, 140, .9);
   width: 100%;
   display: inline-block;
   font-size: 1.5em;
@@ -142,22 +141,43 @@ Media Queries
 ------------*/
 
 @media (min-width: 800px) {  
+  header {
+    line-height: 1em;
+    font-size: .75em;
+  }
   nav {
-    margin: 20px 0px;
-    display: none; }
+    position: absolute;
+    width: 90%;
+    height: 50px;
+    top: 0;
+    margin: 0px auto;
+    margin-left: 90px;
+    display: none; 
+    border-radius: 5px;
+  }
   nav ul li {
-    border-right: 1px solid white;
+    border: none;
     display: inline-block;
     width: 20%;
-    border-bottom: none; }
+  }
+
+  #hamburger {
+    margin: 17px;
+  }
+
+  .tab:hover {
+    text-shadow: 1px 1px 1px 5px darkturquoise;
+  }
 
   #first-tab {
-  border-left: 1px solid white;
-  border-top: none; }
+  border-left: none;
+  border-top: none; 
+  }
 
   #welcome-text {
-    margin: 2% auto; 
-    text-align: center; }
+    margin: 15% auto; 
+    text-align: center; 
+  }
 
   #welcome-text h1 {
     margin: 1.75%; }
