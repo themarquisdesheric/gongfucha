@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('./public'));
 
 //Connect to postgres or heroku DB
-const conString = process.env.HEROKU_POSTGRESQL_ORANGE_URL || 'postgres://localhost:5432';
+const conString = process.env.HEROKU_POSTGRESQL_BRONZE_URL || 'postgres://localhost:5432';
 
 // Pass conString to pg, which creates new client object
 const client = new pg.Client(conString);
