@@ -26,7 +26,7 @@ function initMap() {
   });
   //loop through locations array and convert title to latLng
   for (let i = 0; i < locations.length; i++) {
-    let url = geocodeUrl(locations[i].title);
+    let url = geocodeUrl(locations[i].title, locations[i].city);
     //set marker for each shop
     $.get(url).done(function (response) {
       console.log(response);
@@ -37,13 +37,14 @@ function initMap() {
       });
       //create info window for marker
       let infoWindow = new google.maps.InfoWindow({
-        content: `<b>${locations[i].title}</b>
-                  <p>${response.results[0].address_components[0].short_name} ${response.results[0].address_components[1].short_name}</p>
-                  <p>${response.results[0].address_components[3].short_name}</p>
-                 `
+        content: `<p>${locations[i].title}</p>
+                  <p>${response.results[0].formatted_address}</p>`,
+        maxWidth: 120
       });
-
-      infoWindow.open(map, marker);
+      //click handler to open info windows
+      marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+      });
     });
   }
 }
