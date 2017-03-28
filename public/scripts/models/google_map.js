@@ -22,7 +22,8 @@ function initMap() {
   //initialize map and center it
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
-    center: {lat: 45.549863, lng: -122.675790}
+    center: {lat: 45.549863, lng: -122.675790},
+    scrollwheel: false
   });
   //loop through locations array and convert title to latLng
   for (let i = 0; i < locations.length; i++) {
