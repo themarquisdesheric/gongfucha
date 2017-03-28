@@ -7,6 +7,8 @@
     "address-city": "Portland",
     "address-state": "OR",
     "address-zip": "97227",
+    "phone": "555-555-5555",
+    "email": "teahouse@fake.com",
     "hours": "12:00p - 8:00p everyday"
   },
   {
@@ -17,6 +19,8 @@
     "address-city": "Portland",
     "address-state": "OR",
     "address-zip": "97215",
+    "phone": "555-555-5555",
+    "email": "teahouse@fake.com",
     "hours": "By Appointment"
   },
   {
@@ -27,6 +31,8 @@
     "address-city": "Portland",
     "address-state": "OR",
     "address-zip": "97214",
+    "phone": "555-555-5555",
+    "email": "teahouse@fake.com",
     "hours": "11:00p - 10:00p everyday"
   }
 ]
