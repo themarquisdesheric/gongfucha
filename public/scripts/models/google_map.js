@@ -21,7 +21,7 @@ function geocodeUrl(title) {
 function initMap() {
   //initialize map and center it
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
+    zoom: 11,
     center: {lat: 45.549863, lng: -122.675790},
     scrollwheel: false
   });
