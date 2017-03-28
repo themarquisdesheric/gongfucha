@@ -7,7 +7,6 @@ const express = require('express');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-console.log(process.env);
 //loads rest of CSS assets in public
 app.use(express.static('./public'));
 
