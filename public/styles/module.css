@@ -6,50 +6,77 @@
 
 header {
   overflow: hidden;
+  height: 40%;
   width: 100%;
-  line-height: 1.5em;
+  line-height: 2.5em;
 }
 
+/*hamburger menu*/
 #hamburger {
-  background-color: rgb(53.3, 51.8, 54.9);
-  width: 40px;
-  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: rgba(136, 132, 140, .5);
   margin: 10px;
-  background-image: url('../assets/img/icons/hamburger-menu.svg');
-  background-repeat: no-repeat;
   float: left;
+  transition-duration: 1s;
+}
+
+#hamburger:hover {
+  box-shadow: 0px 0px 10px 3px cyan;
+  animation-duration: 1s;
+  animation-name: hamburger;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+#hamburger i {
+  font-size: 30px;
+  margin: 20px;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.rotate {
+  transform: rotate(90deg);
 }
 
 nav {
+  margin-top: 5%;
   display: none;
   position: relative;
+  z-index: -2;
   top: 0;
   left: 0;
-  background-color: rgb(181, 181, 181);
   width: 100%;
-  height: 70%;
+  height: 30%;
 }
 
 nav ul {
   text-align: center;
 }
 
-nav ul li{
+nav ul li {
+  background-color: rgba(136, 132, 140, .9);
   width: 100%;
   display: inline-block;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
-  border-bottom: 1px solid #222;
-  padding: 10px 0px;
+  border-bottom: 1px solid white;
+  padding: 30px 0px;
+}
+
+nav ul li:hover {
+  background-color: darkturquoise;
 }
 
 #first-tab {
-  border-top: 1px solid #222;
+  border-top: 1px solid white;
 }
 
 nav ul li a{
+  color: white;
   text-decoration: none;
-  color: black;
 }
 
 nav ul li a:hover {
@@ -129,7 +156,7 @@ Media Queries
   border-top: none; }
 
   #welcome-text {
-    margin: 2%; 
+    margin: 2% auto; 
     text-align: center; }
 
   #welcome-text h1 {
