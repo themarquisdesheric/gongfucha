@@ -10,6 +10,18 @@
 	<link type="text/css" rel="stylesheet" href="styles/module.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script id="tealocation-template" type="text/x-handlebars-template">
+		<article class="shopsection" data-category="{{category}}">
+			<header>
+				<h3><a href="{{shopUrl}}">{{shopname}}</a></h3>
+				<div class="byline">
+					<address>{{street}}, {{city}} {{zip}}</address>
+				</div>
+			</header>
+			<section class="tealocation-body">{{{ description }}}</section>
+			<section class="spacer"> --- </section>
+		</article>
+	</script>
 </head>
 <body>
 	<div id="hamburger"></div>
@@ -65,6 +77,7 @@
 		<section id="about" class="tab-content">
 			<h2>About</h2>
 			<p>Gong Fu Cha is a community of tea enthusiasts; we come together to celebrate good tea and tea ceremonies.</p>
+			<article id="tealist"></article>
 		</section>
 		<section id="submit" class="tab-content">
 			<h2>Submit</h2>
@@ -125,6 +138,7 @@
   crossorigin="anonymous"></script>
 	<script src="vendor/scripts/jquery.sidebar.min.js"></script>
 	<script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 	<!-- SCRIPTS -->
 	<script src="scripts/models/model.js"></script>
 	<script src="scripts/views/view.js"></script>
