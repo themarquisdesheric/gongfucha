@@ -1,8 +1,7 @@
 // (function (module) {
-//   const model = {};
+//   const TeaLocation = {};
 
-
-//   module.model = model;
+//   module.TeaLocation = TeaLocation;
 // })(window);
 
 function TeaLocation(data) {
@@ -36,8 +35,13 @@ TeaLocation.prototype.toHtml = function () {
   return template(this);
 };
 
-initIndexPage = function() {
+TeaLocation.initIndexPage = function () {
   TeaLocation.all.forEach(a => $('#about').append(a.toHtml()));
 };
 
 TeaLocation.fetchAll(initIndexPage);
+
+/*------------------------------
+Taking information from new form
+------------------------------*/
+
