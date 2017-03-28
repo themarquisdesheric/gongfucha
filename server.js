@@ -40,8 +40,8 @@ app.get('/tea', function (request, response) {
 app.post('/tea', function(request, response) {
   client.query(
     `INSERT INTO
-    tea_locations(shopName, "shopUrl", description, street, city, state, zip, category)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`,
+    tea_locations(shopName, "shopUrl", description, street, city, state, zip, country, category)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);`,
     [
       request.body.shopName,
       request.body.shopUrl,
@@ -50,6 +50,7 @@ app.post('/tea', function(request, response) {
       request.body.city,
       request.body.state,
       request.body.zip,
+      request.body.country,
       request.body.category
     ]
   )
@@ -79,9 +80,9 @@ function loadTeaLocations() {
           JSON.parse(fd.toString()).forEach(ele => {
             client.query(`
             INSERT INTO
-            tea_locations(shopName, "shopUrl", description, street, city, state, zip, category)
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`,
-            [ele.shopName, ele.shopUrl, ele.description, ele.street, ele.city, ele.state, ele.zip, ele.category]
+            tea_locations(shopName, "shopUrl", description, street, city, state, zip, country, category)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);`,
+            [ele.shopName, ele.shopUrl, ele.description, ele.street, ele.city, ele.state, ele.zip, ele.country, ele.category]
             )
           })
         })
@@ -100,6 +101,7 @@ function loadDB() {
     city VARCHAR(255) NOT NULL,
     state VARCHAR(255) NOT NULL,
     zip VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
     category VARCHAR(20));`
   )
   .then(function() {

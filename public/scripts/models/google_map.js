@@ -11,6 +11,24 @@ const locations = [
   },
   {
     title: 'Heavens Tea, School of Tea Arts'
+  },
+  {
+    title: 'Song Tea & Ceramics',
+  },
+  {
+    title: 'Songfang Tea House',
+  },
+  {
+    title: 'Dayi Pu\'er Tea Franchise Store',
+  },
+  {
+    title: 'LockCha Tea House',
+  },
+  {
+    title: 'Wisteria Tea House',
+  },
+  {
+    title: 'Lin Ceramic\'s Studio',
   }
 ];
 //this is how we ping the google geocode API with a shop name and it returns the latLng
