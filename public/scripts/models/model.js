@@ -35,12 +35,6 @@ TeaLocation.prototype.toHtml = function () {
   return template(this);
 };
 
-initIndexPage = function () {
-  TeaLocation.all.forEach(a => $('#tea-sidebar').append(a.toHtml()));
-};
-
-TeaLocation.fetchAll(initIndexPage);
-
 /*------------------------------
 Taking information from new form
 ------------------------------*/
