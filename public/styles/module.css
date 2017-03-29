@@ -12,33 +12,28 @@ header {
 }
 
 /*hamburger menu*/
-#hamburger {
+#teapot-logo-div {
   border: 1px solid white;
   border-radius: 50%;
-  background-color: rgba(136, 132, 140, .5);
   margin: 10px;
-  float: left;
-  transition-duration: 1s;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(207, 128, 0, .5);
+  float: right;
 }
 
-#hamburger:hover {
+#teapot-logo-div:hover {
   box-shadow: 0px 0px 10px 3px cyan;
-  animation-name: hamburger;
-  animation-duration: 300ms;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
 }
 
-#hamburger i {
-  font-size: 30px;
-  margin: 20px;
-  height: 100%;
+#teapot-logo {
   width: 100%;
-  color: white;
+  height: 100%;
 }
 
 .rotate {
-  transform: rotate(90deg);
+  transition-duration: 1s;
+  transform: rotate(-90deg);
 }
 
 nav {
@@ -108,7 +103,7 @@ video {
   border-radius: 30px;
   background-color: rgba(136, 132, 140, .5);
   text-align: center;
-  margin: 30% auto; 
+  margin: 12% auto 17% auto; 
   text-shadow: .2px .2px 4px black;
 }
 
@@ -120,6 +115,23 @@ video {
 #welcome-text h3 {
   font-size: 1em;
 }
+
+#arrow {
+  text-align: center;
+  font-size: 50px;
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 0px auto;
+  animation: bounce 2s infinite ease-in-out
+  }
+
+@keyframes bounce {
+  0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+  40%  { -webkit-transform: translateY(-20px); }
+	80% { -webkit-transform: translateY(-10px); }
+}
+
 
 /*-----------
 Map Styles
@@ -145,23 +157,30 @@ Media Queries
     height: 50px;
     top: 0;
     margin: 0px auto;
-    margin-left: 90px;
     display: inline-block;
     border-radius: 5px;
     text-shadow: .5px .5px 2px grey;
   }
 
+  nav ul {
+    width: 80%;
+    margin: 0 auto;
+  }
+
   nav ul li {
     border: none;
     display: inline-block;
-    margin: 15px;
+    margin: 15px auto;
     padding: 30px 30px;
     width: 12%;
     border-radius: 30px;
   }
 
-  #hamburger {
+  #teapot-logo-div {
     margin: 17px;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
   }
 
   .tab:hover {
@@ -174,7 +193,7 @@ Media Queries
   }
 
   #welcome-text {
-    margin: 12% auto; 
+    margin: 12% auto 18% auto; 
     text-align: center; 
     padding: 1%;
     box-shadow: 0 3px 30px rgba(0,0,0, 0.3); }
@@ -189,14 +208,10 @@ Media Queries
     margin: 1.75%; 
   }
 
-  #teapot-button {
-    border-radius: 50%;
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: 12% auto;
-    background-color: rgba(136, 132, 140, .5);
-  }
+@media (min-width: 1200px) {
+  #welcome-text {
+    margin: 7% auto 13% auto; 
+}
 
 /*-----------
 Submit & Forms
