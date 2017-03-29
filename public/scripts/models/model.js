@@ -36,7 +36,7 @@ TeaLocation.prototype.toHtml = function () {
 };
 
 initIndexPage = function () {
-  TeaLocation.all.forEach(a => $('#about').append(a.toHtml()));
+  TeaLocation.all.forEach(a => $('#tea-sidebar').append(a.toHtml()));
 };
 
 TeaLocation.fetchAll(initIndexPage);

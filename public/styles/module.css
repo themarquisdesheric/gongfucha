@@ -129,15 +129,6 @@ Map Styles
   margin: 3%;
 }
 
-#map-parent {
-  position: relative;
-}
-
-#map {
-  height: 500px;
-  width: 100%;
-}
-
 /*-----------
 Media Queries
 ------------*/
@@ -206,14 +197,6 @@ Media Queries
     margin: 12% auto;
     background-color: rgba(136, 132, 140, .5);
   }
-
-  #map-parent { 
-    margin: 0 10%; }
-
-  #map {
-    height: 600px;
-    box-shadow: 0 3px 14px rgba(0,0,0, 0.3); }
-}
 
 /*-----------
 Submit & Forms
