@@ -31,6 +31,9 @@
     submitController.render = function() {
         $('.tab-content').hide();
         $('#submit').fadeIn();
+
+        //below functions should read from the form
+        $('#new-tea-location').on('submit', 'input, textarea', view.create);
     }
     module.submitController = submitController;
 })(window);

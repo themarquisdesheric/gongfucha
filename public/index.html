@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<script id="tealocation-template" type="text/x-handlebars-template">
-		<article class="shopsection" data-category="{{category}}">
+		<article class="shopsection" data-category="{{category}}" data-city="{{city}}">
 			<div class="shopheader">
 				<h3><a href="{{shopUrl}}">{{shopname}}</a></h3>
 				<p>{{street}}, {{city}} {{zip}}</p>
@@ -51,42 +51,29 @@
 		</section>
 		<section id="places" class="tab-content ">
 			<h2>Tea Locator</h2>
+			<div id="search-settings">
+					<select id="category-filter">
+						<option value="">-- All Categories --</option>
+					</select>
+					<select id="city-filter">
+						<option value="">-- All Cities --</option>
+					</select>
+			</div>
 			<!-- GOOGLE MAPS -->
 			<div id="map-parent">
+				<div id="tea-sidebar"></div>
 				<div id="map"></div>
-				<div id="sidebar" class="sidebar left collapsed">
-					<!-- Nav tabs -->
-					<div class="sidebar-tabs">
-							<ul role="tablist">
-									<li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
-							</ul>
-							<ul role="tablist">
-									<li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
-							</ul>
-					</div>
-					<!-- Tab panes -->
-					<div class="sidebar-content">
-							<div class="sidebar-pane" id="home">
-									<h1 class="sidebar-header">Gong Fu Cha Tea Shops<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-									<p>In Portland:</p>
-							</div>
-							<div class="sidebar-pane" id="settings">
-									<h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-							</div>
-					</div>
-				</div>
 			</div>
 		</section>
 		<section id="about" class="tab-content">
 			<h2>About</h2>
 			<p>Gong Fu Cha is a community of tea enthusiasts; we come together to celebrate good tea and tea ceremonies.</p>
-			<article id="tealist"></article>
 		</section>
 		<section id="submit" class="tab-content">
 			<h2>Submit</h2>
 			<p>We welcome new submissions from our users. Submit a new Gong Fu Cha tea shop, tea house or tea event here.</p>
 			<p>Enter your new tea house, shop, or location into the form below:</p>
-			<form>
+			<form id="new-tea-location">
 				  <div class="full-width">
 						<div class="two-field-form">
 							<label for="shop-name">Shop Name</label>
@@ -98,29 +85,29 @@
 						</div>
 					</div>
 					<div class="full-width">
-						<label for="shop-name">Description</label>
+						<label for="shop-description">Description</label>
 						<input class="full-width" name="shop-descrip" placeholder="Describe your shop!" type="text">
 				  </div>
 					<div class="full-width">
-						<label for="shop-name">Street Address</label>
+						<label for="shop-street">Street Address</label>
 						<input class="full-width" name="shop-address-street" type="text">
 					</div>
 					<div class="full-width">
 						<div class="three-field-form">
-							<label for="shop-name">City</label>
+							<label for="shop-city">City</label>
 							<input class="full-width" name="shop-address-city" type="text">
 						</div><div class="three-field-form">
-							<label for="shop-name">State/ Province</label>
+							<label for="shop-state">State/ Province</label>
 							<input class="full-width" name="shop-address-state" type="text">
 						</div><div class="three-field-form">
-							<label for="shop-name">Country</label>
-							<input class="full-width" name="shop-address-zip" type="text">
+							<label for="shop-zip">Postal Code</label>
+							<input class="full-width" name="shop-zip" type="text">
 						</div>
 					</div>
 				  <div class="full-width">
 						<div class="two-field-form">
-							<label for="shop-name">Phone</label>
-							<input class="full-width" name="shop-name" placeholder="Phone" type="text">
+							<label for="shop-country">Country</label>
+							<input class="full-width" name="shop-zip" type="text">
 						</div>
 						<div class="two-field-form">
 							<label for="shop-url">Email</label>
@@ -144,11 +131,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 	<!-- SCRIPTS -->
 	<script src="scripts/models/model.js"></script>
+	<script src="api_key.js"></script>
+	<script src="scripts/models/google_map.js"></script>  
 	<script src="scripts/views/view.js"></script>
 	<script src="scripts/views/homeView.js"></script>
 	<script src="scripts/controllers/controller.js"></script>
-	<script src="api_key.js"></script>
-	<script src="scripts/models/google_map.js"></script>  
 	<script async defer
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6xiV5TA_kRcyfzDRQGqomoUI1qHkoWO8&callback=initMap">
 	</script>
