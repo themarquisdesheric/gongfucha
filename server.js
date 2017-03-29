@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 //loads rest of CSS assets in public
 app.use(express.static('./public'));
+console.log(process.env);
 
 //Connect to postgres or heroku DB
 const conString = process.env.HEROKU_POSTGRESQL_BRONZE_URL || 'postgres://localhost:5432';
