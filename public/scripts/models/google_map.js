@@ -1,7 +1,4 @@
 'use strict';
-
-const GOOGLE_PLACES_API_KEY = 'AIzaSyABR5dsVE6XNT0UOAKI_qmSC4_p0jPShQM';
-
 const locations = [
   {
     title: 'Fly Awake Tea'
@@ -34,11 +31,11 @@ const locations = [
 
 //format the URL for the call to Places API
 function placesUrl(title) {
-  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${title}&key=${GOOGLE_PLACES_API_KEY}`
+  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${title}&key=${PLACES_KEY}`
 }
 //format the URL for the call to Places Details API
 function placeDetailsUrl(id) {
-  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${GOOGLE_PLACES_API_KEY}`
+  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${PLACES_KEY}`
 }
 
 function initMap() {
@@ -54,6 +51,7 @@ function initMap() {
     let url = placesUrl(locations[i].title);
     //send GET request to Places API to obtain place ID
     $.get(`https://crossorigin.me/${url}`).done(function (response) {
+      console.log(response);
       let placeId = response.results[0].place_id;
       let placeIdUrl = placeDetailsUrl(placeId);
       //send GET request to Places Details API for shop info
