@@ -51,9 +51,19 @@ function initMap() {
     let url = placesUrl(locations[i].title);
     //send GET request to Places API to obtain place ID
     $.get(`https://crossorigin.me/${url}`).done(function (response) {
-      console.log(response);
       let placeId = response.results[0].place_id;
       let placeIdUrl = placeDetailsUrl(placeId);
+      let open = '';
+      //check if shop has its hours listed
+      if (response.results[0].hasOwnProperty('opening_hours')) {
+        //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
+        if (response.results[0].opening_hours.open_now) {
+          open = '<p style="color:#0f0;">Open now</p>';
+        } else {
+          open = '<p style="color:#f00;">Closed now</p>';
+        }
+      }
+
       //send GET request to Places Details API for shop info
       $.get(`https://crossorigin.me/${placeIdUrl}`).done(function(response) {
         console.log('Place Details response: ', response);
@@ -65,8 +75,9 @@ function initMap() {
         });
         //create info window for marker
         let infoWindow = new google.maps.InfoWindow({
-          content: `<p>${locations[i].title}</p>
+          content: `<p style="font-weight:bold;">${locations[i].title}</p>
                     <p>${response.result.formatted_address}</p>
+                    ${open}
                     <p>${response.result.formatted_phone_number}</p>
                     <p><a href="${response.result.website}">${response.result.website}</a></p>`,
           maxWidth: 120
