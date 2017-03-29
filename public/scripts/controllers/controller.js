@@ -33,6 +33,7 @@
         $('#submit').fadeIn();
 
         //below functions should read from the form
+        //look in view.js for create form and ajax call to DB
         $('#new-tea-location').on('submit', 'input, textarea', view.create);
     }
     module.submitController = submitController;
