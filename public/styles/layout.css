@@ -44,6 +44,40 @@ footer {
 /*-----------
 Sidebar & Map
 ------------*/
+.sidebar {      /*for mobile only */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2000; }
+  .sidebar.collapsed {
+    width: 100%;
+    height: 50px;
+    margin-top: 500px; }
+
+       /*For default*/
+    @media (min-width: 607px){
+      .sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2000; }
+  .sidebar.collapsed {
+    width: 35px;
+    height: 85%;
+    margin: 0 auto;
+    margin-top: 30px }
+    #map {
+  height: 800px;
+  /*width: 100%;*/
+}
+    }
+
+
+  @media (min-width: 768px) {
 .sidebar {
   position: absolute;
   top: 0;
@@ -53,7 +87,6 @@ Sidebar & Map
   z-index: 2000; }
   .sidebar.collapsed {
     width: 40px; }
-  @media (min-width: 768px) {
     .sidebar {
       top: 10px;
       bottom: 10px;
@@ -231,3 +264,24 @@ Sidebar & Map
 @media (min-width: 768px) {
   .sidebar-right.collapsed ~ .sidebar-map .gm-style > div.gmnoprint[style*="right: 28px"] {
     margin-right: 60px !important; } }
+
+#setting-icon {
+  position: absolute;
+  bottom: 0;
+  right: 100;
+}
+
+
+
+
+
+/*other settings for mobile tabs*/
+
+.lil_burg{
+  position: relative;
+  bottom: 3px;
+}
+.cog {
+  position: relative;
+  top: 7px;
+}
