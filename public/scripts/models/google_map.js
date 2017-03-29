@@ -1,4 +1,5 @@
 'use strict';
+
 const locations = [
   {
     title: 'Fly Awake Tea'
@@ -29,6 +30,14 @@ const locations = [
   }
 ];
 
+const markers = [];
+
+function removeMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+}
+
 //format the URL for the call to Places API
 function placesUrl(title) {
   return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${title}&key=${PLACES_KEY}`
@@ -51,6 +60,9 @@ function initMap() {
     let url = placesUrl(locations[i].title);
     //send GET request to Places API to obtain place ID
     $.get(`https://crossorigin.me/${url}`).done(function (response) {
+
+      console.log(response);
+
       let placeId = response.results[0].place_id;
       let placeIdUrl = placeDetailsUrl(placeId);
       let open = '';
@@ -86,6 +98,7 @@ function initMap() {
         marker.addListener('click', function() {
           infoWindow.open(map, marker);
         });
+        markers.push(marker);
       });
     });
   }
@@ -96,4 +109,3 @@ function initMap() {
     map.setCenter(center);
   });
 }
-
