@@ -52,6 +52,30 @@ view.handleCityFilter = function() {
   });
 };
 
+/*------------------------------
+Taking information from new form
+------------------------------*/
+// Pull from object and JSON.
+view.create = function() {
+  let teaLocation;
+  $('#tealocation').empty();
+
+  teaLocation = new TeaLocation({
+    shopName: $('#shop-name').val(),
+    shopUrl: $('#shop-url').val(),
+    description: $('#shop-description').val(),
+    street: $('#shop-street').val(),
+    city: $('#shop-city').val(),
+    state: $('#shop-state').val(),
+    zip: $('#shop-zip').val(),
+    country: $('#shop-country').val(),
+    category: $('#shop-category:checked').val(),
+  });
+
+  //append new TeaLocation to database
+  //populate new TeaLocation to sidebar and categories
+};
+
 view.initIndexPage = function () {
   TeaLocation.all.forEach(a => $('#tea-sidebar').append(a.toHtml()));
   view.populateFilters();

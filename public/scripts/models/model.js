@@ -34,8 +34,3 @@ TeaLocation.prototype.toHtml = function () {
   var template = Handlebars.compile(source);
   return template(this);
 };
-
-/*------------------------------
-Taking information from new form
-------------------------------*/
-
