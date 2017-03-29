@@ -6,7 +6,7 @@
   module.view = view;
 })(window);
 
-// nav script
+// Nav script
 var hamburgerMenu = function() {
   $('#hamburger').on('click', function() {
     var $nav = $('nav');
@@ -15,6 +15,17 @@ var hamburgerMenu = function() {
   });
 };
 
+//Search animation
+var searchAnimation = function() {
+  $('#search-settings-nav').on('click', function() {
+    $('#search-settings').slideToggle('fast');
+  })
+};
+
+/*------------------------------
+Filters (Tea Locations)
+------------------------------*/
+//This function grabs the data attributes from our tea list and populates the search filters.
 view.populateFilters = function() {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
@@ -47,7 +58,13 @@ view.handleCategoryFilter = function() {
   });
 };
 
-//Event listener and handler for Author
+// view.toggleButton = function() {
+//   $('#search-city').on('click', ,function() {
+//       $(`article[data-city="${$(this).val()}"]`).toggle();
+//   });
+// };
+
+//Event listener and handler for Cities
 view.handleCityFilter = function() {
   $('#city-filter').on('change', function() {
     if ($(this).val()) {
@@ -86,6 +103,7 @@ view.create = function() {
 };
 
 hamburgerMenu();
+searchAnimation();
 view.initIndexPage = function () {
   TeaLocation.all.forEach(a => $('#tea-sidebar').append(a.toHtml()));
   view.populateFilters();
