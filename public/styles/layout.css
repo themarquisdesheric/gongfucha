@@ -58,7 +58,9 @@ About & Submit
   padding: 15%; }
 
 #about {
-  background-color: lightgray; }
+  background-image: url('/assets/img/puer-tea-table.png');
+  background-size: 100%; 
+  background-color:rgba(0,0,0, 0.8); }
 
 #about h2, #submit h2 {
   font-size: 40px;

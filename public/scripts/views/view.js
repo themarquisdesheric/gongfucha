@@ -69,7 +69,9 @@ view.handleCityFilter = function() {
   $('#city-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $(`article[data-city="${$(this).val()}"]`).fadeIn();
+      $.each($(this).val(), function(index, city) {
+        $(`article[data-city="${city}"]`).fadeIn();
+      })
     } else {
       $('article').fadeIn();
       $('article.template').hide();
