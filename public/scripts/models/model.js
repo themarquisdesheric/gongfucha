@@ -34,14 +34,3 @@ TeaLocation.prototype.toHtml = function () {
   var template = Handlebars.compile(source);
   return template(this);
 };
-
-initIndexPage = function () {
-  TeaLocation.all.forEach(a => $('#tea-sidebar').append(a.toHtml()));
-};
-
-TeaLocation.fetchAll(initIndexPage);
-
-/*------------------------------
-Taking information from new form
-------------------------------*/
-
