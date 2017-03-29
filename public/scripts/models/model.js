@@ -4,6 +4,9 @@
 //   module.TeaLocation = TeaLocation;
 // })(window);
 
+/*------------------------------
+Populating Database & Tea Location List
+------------------------------*/
 function TeaLocation(data) {
   Object.keys(data).forEach(ele => (this[ele] = data[ele]));
 }
@@ -13,8 +16,6 @@ TeaLocation.all = [];
 
 // Function sorts and populates TeaLocation.all array
 TeaLocation.loadAll = rawData => {
-  rawData.sort();
-
   TeaLocation.all = rawData.map(ele => new TeaLocation(ele));
 };
 

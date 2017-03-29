@@ -51,13 +51,18 @@
 		</section>
 		<section id="places" class="tab-content ">
 			<h2>Tea Locator</h2>
+			<div id="search-settings-nav">Search Settings <i class="fa fa-cog" aria-hidden="true"></i></div>
 			<div id="search-settings">
-					<select id="category-filter">
+					<section class="search-column">
+						<select id="category-filter">
 						<option value="">-- All Categories --</option>
-					</select>
-					<select id="city-filter">
-						<option value="">-- All Cities --</option>
-					</select>
+						</select>
+					</section>
+					<section class="search-column" id="search-city">
+						<select id="city-filter">
+							<option value="">-- All Cities --</option>
+						</select>
+					</section>
 			</div>
 			<!-- GOOGLE MAPS -->
 			<div id="map-parent">
