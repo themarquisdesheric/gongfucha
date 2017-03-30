@@ -1,37 +1,20 @@
 'use strict';
-const locations = [
-  {
-    title: 'Fly Awake Tea'
-  },
-  {
-    title: 'Tao of Tea'
-  },
-  {
-    title: 'Heavens Tea, School of Tea Arts'
-  },
-  {
-    title: 'Song Tea & Ceramics',
-  },
-  {
-    title: 'Songfang Tea House',
-  },
-  {
-    title: 'Dayi Pu\'er Tea Franchise Store',
-  },
-  {
-    title: 'LockCha Tea House',
-  },
-  {
-    title: 'Wisteria Tea House',
-  },
-  {
-    title: 'Lin Ceramic\'s Studio',
+
+const markers = [];
+
+function removeMarker(marker) {
+  marker.setMap(null);
+}
+
+function removeMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
   }
-];
+}
 
 //format the URL for the call to Places API
-function placesUrl(title) {
-  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${title}&key=${PLACES_KEY}`
+function placesUrl(shopname) {
+  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${shopname}&key=${PLACES_KEY}`
 }
 //format the URL for the call to Places Details API
 function placeDetailsUrl(id) {
@@ -46,14 +29,28 @@ function initMap() {
     scrollwheel: false
   });
 
+  const locations = TeaLocation.all;
   //loop through locations array and populate map with markers
   for (let i = 0; i < locations.length; i++) {
-    let url = placesUrl(locations[i].title);
+    let url = placesUrl(locations[i].shopname);
     //send GET request to Places API to obtain place ID
     $.get(`https://crossorigin.me/${url}`).done(function (response) {
+
       console.log(response);
+
       let placeId = response.results[0].place_id;
       let placeIdUrl = placeDetailsUrl(placeId);
+      let open = '';
+      //check if shop has its hours listed
+      if (response.results[0].hasOwnProperty('opening_hours')) {
+        //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
+        if (response.results[0].opening_hours.open_now) {
+          open = '<p style="color:#0f0;">Open now</p>';
+        } else {
+          open = '<p style="color:#f00;">Closed now</p>';
+        }
+      }
+
       //send GET request to Places Details API for shop info
       $.get(`https://crossorigin.me/${placeIdUrl}`).done(function(response) {
         console.log('Place Details response: ', response);
@@ -65,8 +62,9 @@ function initMap() {
         });
         //create info window for marker
         let infoWindow = new google.maps.InfoWindow({
-          content: `<p>${locations[i].title}</p>
+          content: `<p style="font-weight:bold;">${locations[i].shopname}</p>
                     <p>${response.result.formatted_address}</p>
+                    ${open}
                     <p>${response.result.formatted_phone_number}</p>
                     <p><a href="${response.result.website}">${response.result.website}</a></p>`,
           maxWidth: 120
@@ -75,6 +73,8 @@ function initMap() {
         marker.addListener('click', function() {
           infoWindow.open(map, marker);
         });
+        locations[i].marker = marker;
+        markers.push(marker);
       });
     });
   }
@@ -85,4 +85,3 @@ function initMap() {
     map.setCenter(center);
   });
 }
-

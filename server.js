@@ -19,6 +19,7 @@ const client = new pg.Client(conString);
 
 // Connect client object to DB
 client.connect();
+app.use(bodyParser.json());
 
 //set index.html to root
 app.get('/', function (req, res) {
@@ -40,10 +41,10 @@ app.get('/tea', function (request, response) {
 app.post('/tea', function(request, response) {
   client.query(
     `INSERT INTO
-    tea_locations(shopName, "shopUrl", description, street, city, state, zip, country, category)
+    tea_locations(shopname, "shopUrl", description, street, city, state, zip, country, category)
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);`,
     [
-      request.body.shopName,
+      request.body.shopname,
       request.body.shopUrl,
       request.body.description,
       request.body.street,
@@ -80,9 +81,9 @@ function loadTeaLocations() {
           JSON.parse(fd.toString()).forEach(ele => {
             client.query(`
             INSERT INTO
-            tea_locations(shopName, "shopUrl", description, street, city, state, zip, country, category)
+            tea_locations(shopname, "shopUrl", description, street, city, state, zip, country, category)
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);`,
-            [ele.shopName, ele.shopUrl, ele.description, ele.street, ele.city, ele.state, ele.zip, ele.country, ele.category]
+            [ele.shopname, ele.shopUrl, ele.description, ele.street, ele.city, ele.state, ele.zip, ele.country, ele.category]
             )
           })
         })
@@ -94,7 +95,7 @@ function loadDB() {
   client.query(`
   CREATE TABLE IF NOT EXISTS tea_locations (
     tealocation_id SERIAL PRIMARY KEY,
-    shopName VARCHAR(255) NOT NULL,
+    shopname VARCHAR(255) NOT NULL,
     "shopUrl" VARCHAR (255),
     description TEXT NOT NULL,
     street VARCHAR(255) NOT NULL,
