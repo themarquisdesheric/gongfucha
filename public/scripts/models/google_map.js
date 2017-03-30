@@ -22,17 +22,7 @@ function initMap() {
 
       let placeId = response.results[0].place_id;
       let placeIdUrl = placeDetailsUrl(placeId);
-      // let open = '';
-      //check if shop has its hours listed
-      // if (response.results[0].hasOwnProperty('opening_hours')) {
-      //   //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
-      //   if (response.results[0].opening_hours.open_now) {
-      //     open = '<p style="color:#0f0;">Open now</p>';
-      //   } else {
-      //     open = '<p style="color:#f00;">Closed now</p>';
-      //   }
-      // }
-
+      //check if shop is open
       isOpen(response.results[0]);
 
       //send GET request to Places Details API for shop info
@@ -57,7 +47,9 @@ function initMap() {
         marker.addListener('click', function() {
           infoWindow.open(map, marker);
         });
+        //add reference to marker to corresponding shop
         locations[i].marker = marker;
+        //markers array so we can clear existing markers from the map/repopulate them
         markers.push(marker);
       });
     });
@@ -75,16 +67,16 @@ function removeMarker(marker) {
 }
 
 function removeMarkers() {
-  for (let i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
+  markers.forEach(marker => {
+    marker.setMap(null);
+  });
 }
 
 //we need to tie into the map which is currently scoped to the initMap, so this DOESN'T WORK FOR NOW
 function showMarkers() {
-  for (let i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
-  }
+  markers.forEach(marker => {
+    marker.setMap(map);
+  });
 }
 
 //format the URL for the call to Places API
@@ -96,10 +88,10 @@ function placeDetailsUrl(id) {
   return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${PLACES_KEY}`
 }
 
-function isOpen(res) {
-  if (res.hasOwnProperty('opening_hours')) {
+function isOpen(shop) {
+  if (shop.hasOwnProperty('opening_hours')) {
     //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
-    if (res.opening_hours.open_now) {
+    if (shop.opening_hours.open_now) {
       open = '<p style="color:#0f0;">Open now</p>';
     } else {
       open = '<p style="color:#f00;">Closed now</p>';
