@@ -24,7 +24,7 @@ TeaLocation.fetchAll = callback => {
   $.get('/tea')
     .then(
     results => {
-      console.log('result are: ', results)
+      console.log('results are: ', results)
       TeaLocation.loadAll(results);
       callback();
     }

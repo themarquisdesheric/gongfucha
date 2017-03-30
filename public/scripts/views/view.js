@@ -78,7 +78,7 @@ view.handleCategoryFilter = function() {
 Taking information from new form
 ------------------------------*/
 // Pull from object and JSON.
-view.create = function() {
+view.create = function () {
   let teaLocation;
   $('#tealocation').empty();
 
@@ -95,7 +95,14 @@ view.create = function() {
   });
 
   //append new TeaLocation to database
-  //populate new TeaLocation to sidebar and categories
+  $.post('/tea')
+    .then(
+    results => {
+      console.log('results are: ', results)
+      //populate new TeaLocation to sidebar and categories
+      TeaLocation.loadAll(results);
+      callback();
+    });
 };
 
 hamburgerMenu();
