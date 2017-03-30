@@ -61,7 +61,8 @@ nav ul li a:hover {
 }
 
 #welcome-text h1 {
-  font-size: 1.4em;
+  font-family: 'levibrush', sans-serif;
+  font-size: 2em;
   margin: 10%;
 }
 
