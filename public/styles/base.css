@@ -15,7 +15,9 @@ body {
    /*font-family: 'Raleway', sans-serif;*/
   /*font-family: 'Open Sans', sans-serif;*/
 /*font-family: 'Muli', sans-serif;*/
-font-family: 'Quicksand', sans-serif
+/*font-family: 'Quicksand', sans-serif;*/
+/*font-family: 'europe', sans-serif;*/
+font-family: 'ormont', sans-serif;
 }
 
 h1 {
@@ -45,4 +47,43 @@ main {
 /*Pointer for arrow*/
 #arrow {
   cursor: pointer;
+}
+
+/*FONTS*/
+@font-face {
+	font-family: 'levibrush';
+	src: url('fonts/levibrush.ttf'); 
+	/*src: 
+		local('Lovely Font'),
+		local('Lovely-Font'),
+		url('fonts/lovely_font.otf') 
+		format('opentype');*/
+}
+
+@font-face {
+	font-family: 'europe';
+	src: url('fonts/europe-underground-light.ttf'); 
+	/*src: 
+		local('Lovely Font'),
+		local('Lovely-Font'),
+		url('fonts/lovely_font.otf') 
+		format('opentype');*/
+}
+@font-face {
+	font-family: 'ormont';
+	src: url('fonts/ormont-light-copy.otf'); 
+	/*src: 
+		local('Lovely Font'),
+		local('Lovely-Font'),
+		url('fonts/lovely_font.otf') 
+		format('opentype');*/
+}
+@font-face {
+	font-family: 'vnhl';
+	src: url('fonts/vnhltfap.ttf'); 
+	/*src: 
+		local('Lovely Font'),
+		local('Lovely-Font'),
+		url('fonts/lovely_font.otf') 
+		format('opentype');*/
 }
