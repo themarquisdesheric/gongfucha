@@ -69,7 +69,9 @@ view.handleCityFilter = function() {
   $('#city-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $(`article[data-city="${$(this).val()}"]`).fadeIn();
+      $.each($(this).val(), function(index, city) {
+        $(`article[data-city="${city}"]`).fadeIn();
+      })
     } else {
       $('article').fadeIn();
       $('article.template').hide();
@@ -106,6 +108,15 @@ hamburgerMenu();
 searchAnimation();
 view.initIndexPage = function () {
   TeaLocation.all.forEach(a => $('#tea-sidebar').append(a.toHtml()));
+  //solves timing issue for Maps API
+  var initUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC6xiV5TA_kRcyfzDRQGqomoUI1qHkoWO8&callback=initMap';
+  var body = document.getElementsByTagName('body')[0];
+  var js = document.createElement('script');
+  js.type = 'text/javascript';
+  js.src = `https://crossorigin.me/${initUrl}`;
+  body.appendChild(js);
+  //End code needed for Maps API
+
   view.populateFilters();
   view.handleCategoryFilter();
   view.handleCityFilter();

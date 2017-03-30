@@ -1,35 +1,5 @@
 'use strict';
 
-const locations = [
-  {
-    title: 'Fly Awake Tea'
-  },
-  {
-    title: 'Tao of Tea'
-  },
-  {
-    title: 'Heavens Tea, School of Tea Arts'
-  },
-  {
-    title: 'Song Tea & Ceramics',
-  },
-  {
-    title: 'Songfang Tea House',
-  },
-  {
-    title: 'Dayi Pu\'er Tea Franchise Store',
-  },
-  {
-    title: 'LockCha Tea House',
-  },
-  {
-    title: 'Wisteria Tea House',
-  },
-  {
-    title: 'Lin Ceramic\'s Studio',
-  }
-];
-
 const markers = [];
 
 function removeMarkers() {
@@ -39,8 +9,8 @@ function removeMarkers() {
 }
 
 //format the URL for the call to Places API
-function placesUrl(title) {
-  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${title}&key=${PLACES_KEY}`
+function placesUrl(shopname) {
+  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${shopname}&key=${PLACES_KEY}`
 }
 //format the URL for the call to Places Details API
 function placeDetailsUrl(id) {
@@ -55,9 +25,10 @@ function initMap() {
     scrollwheel: false
   });
 
+  const locations = TeaLocation.all;
   //loop through locations array and populate map with markers
   for (let i = 0; i < locations.length; i++) {
-    let url = placesUrl(locations[i].title);
+    let url = placesUrl(locations[i].shopname);
     //send GET request to Places API to obtain place ID
     $.get(`https://crossorigin.me/${url}`).done(function (response) {
 
@@ -87,7 +58,7 @@ function initMap() {
         });
         //create info window for marker
         let infoWindow = new google.maps.InfoWindow({
-          content: `<p style="font-weight:bold;">${locations[i].title}</p>
+          content: `<p style="font-weight:bold;">${locations[i].shopname}</p>
                     <p>${response.result.formatted_address}</p>
                     ${open}
                     <p>${response.result.formatted_phone_number}</p>
