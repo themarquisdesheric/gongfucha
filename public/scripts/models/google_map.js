@@ -32,6 +32,10 @@ const locations = [
 
 const markers = [];
 
+function removeMarker(marker) {
+  marker.setMap(null);
+}
+
 function removeMarkers() {
   for (let i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
@@ -98,6 +102,7 @@ function initMap() {
         marker.addListener('click', function() {
           infoWindow.open(map, marker);
         });
+        locations[i].marker = marker;
         markers.push(marker);
       });
     });
