@@ -2,6 +2,7 @@
 
 const markers = [];
 let open = '';
+let gMap = null;
 
 function initMap() {
   //initialize map and center it
@@ -50,6 +51,7 @@ function initMap() {
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
   });
+  gMap = map;
 }
 
 function createMarker(res, map) {
@@ -81,7 +83,7 @@ function removeMarkers() {
 }
 
 //we need to tie into the map which is currently scoped to the initMap, so this DOESN'T WORK FOR NOW
-function showMarkers() {
+function showMarkers(map) {
   markers.forEach(marker => {
     marker.setMap(map);
   });
