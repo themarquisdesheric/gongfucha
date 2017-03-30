@@ -54,6 +54,6 @@ page();
 //For arrow clicker
 $("#arrow").click(function() {
     $('html, body').animate({
-        scrollTop: $("#tea-lo").offset().top
+        scrollTop: $("#locator-heading").offset().top
     }, 1000);
 });
