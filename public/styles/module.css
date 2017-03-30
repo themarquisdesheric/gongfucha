@@ -2,61 +2,36 @@
   Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.
 */
 
-/*Nav*/
+/*-----------
+Landing Page
+------------*/
 
-header {
-  overflow: hidden;
-  height: 40%;
-  width: 100%;
-  line-height: 2.5em;
+/*HEADER*/
+#landing-page {
+  color: ghostwhite;
 }
 
-/*hamburger menu*/
 #teapot-logo-div {
   border: 1px solid white;
   border-radius: 50%;
-  margin: 10px;
-  width: 60px;
-  height: 60px;
   background-color: rgba(207, 128, 0, .5);
-  float: right;
+  transition-duration: 500ms;
 }
 
 #teapot-logo-div:hover {
   box-shadow: 0px 0px 10px 3px cyan;
 }
 
-#teapot-logo {
-  width: 100%;
-  height: 100%;
-}
-
 .rotate {
   transform: rotate(-90deg);
 }
 
-nav {
-  margin-top: 5%;
-  display: none;
-  position: relative;
-  /*z-index: -2;*/
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-}
-
-nav ul {
-  text-align: center;
-}
-
+/*Nav*/
 nav ul li {
-  width: 100%;
-  display: inline-block;
   font-size: 1.5em;
   font-weight: bold;
   border-bottom: 1px solid white;
-  padding: 30px 0px;
+  text-shadow: 1px 1px 4px rgba(136, 132, 140, .9);
 }
 
 nav ul li:hover {
@@ -76,34 +51,13 @@ nav ul li a:hover {
   text-shadow: 1px 1px 1px cyan;
 }
 
-/*-----------
-Landing Page
-------------*/
-
-#landing-page {
-  color: ghostwhite;
-}
-
-video { 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  transform: translateX(-50%) translateY(-50%);
-  transition: 1s opacity;
-}
+/*WELCOME TEXT*/
 
 #welcome-text {
-  width: 70%;
   border-radius: 30px;
   background-color: rgba(136, 132, 140, .5);
-  text-align: center;
-  margin: 12% auto 17% auto; 
   text-shadow: .2px .2px 4px black;
+  box-shadow: 0 3px 30px rgba(0,0,0, 0.3);
 }
 
 #welcome-text h1 {
@@ -116,13 +70,8 @@ video {
 }
 
 #arrow {
-  text-align: center;
   font-size: 50px;
-  display: block;
-  width: 70px;
-  height: 70px;
-  margin: 0px auto;
-  animation: bounce 2s infinite ease-in-out
+  animation: bounce 2s ease-in-out
   }
 
 @keyframes bounce {
@@ -131,55 +80,32 @@ video {
 	80% { -webkit-transform: translateY(-10px); }
 }
 
-
 /*-----------
 Map Styles
 ------------*/
-#places h2 {
-  text-align: center;
-  margin: 3%;
-}
+
 
 /*-----------
 Media Queries
 ------------*/
 
-@media (min-width: 800px) {  
+@media (min-width: 800px) { 
+
+  /*header*/
   header {
     line-height: 1em;
     font-size: .75em;
   }
 
   nav {
-    position: absolute;
-    width: 90%;
-    height: 50px;
-    top: 0;
-    margin: 0px auto;
-    display: inline-block;
     border-radius: 5px;
     text-shadow: .5px .5px 2px grey;
   }
 
-  nav ul {
-    width: 80%;
-    margin: 0 auto;
-  }
-
   nav ul li {
     border: none;
-    display: inline-block;
-    margin: 15px auto;
-    padding: 30px 30px;
-    width: 12%;
     border-radius: 30px;
-  }
-
-  #teapot-logo-div {
-    margin: 17px;
-    width: 70px;
-    height: 70px;
-    z-index: 2;
+    font-size: 1.15em;
   }
 
   .tab:hover {
@@ -191,11 +117,7 @@ Media Queries
   border-top: none; 
   }
 
-  #welcome-text {
-    margin: 12% auto 18% auto; 
-    text-align: center; 
-    padding: 1%;
-    box-shadow: 0 3px 30px rgba(0,0,0, 0.3); }
+  /*Welcome text*/
 
   #welcome-text h1 {
     font-size: 2.5em;
@@ -206,13 +128,7 @@ Media Queries
     font-size: 1.25em;
     margin: 1.75%; 
   }
-}
 
-@media (min-width: 1200px) {
-  #welcome-text {
-    margin: 7% auto 13% auto; 
-  }
-}
 
 /*-----------
 Submit & Forms
@@ -266,3 +182,4 @@ legend {
   border-color: #888;
   outline: 0; 
   }
+}

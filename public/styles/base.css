@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Kameron|Merriweather|Montserrat|Walter+Turncoat');
 
 body {
+  background-color: white;
   width: 100%;
   font-size: 1.15em;
   line-height: 2em;
