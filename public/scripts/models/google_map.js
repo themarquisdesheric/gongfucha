@@ -1,25 +1,7 @@
 'use strict';
 
 const markers = [];
-
-function removeMarker(marker) {
-  marker.setMap(null);
-}
-
-function removeMarkers() {
-  for (let i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-}
-
-//format the URL for the call to Places API
-function placesUrl(shopname) {
-  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${shopname}&key=${PLACES_KEY}`
-}
-//format the URL for the call to Places Details API
-function placeDetailsUrl(id) {
-  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${PLACES_KEY}`
-}
+let open = '';
 
 function initMap() {
   //initialize map and center it
@@ -40,16 +22,18 @@ function initMap() {
 
       let placeId = response.results[0].place_id;
       let placeIdUrl = placeDetailsUrl(placeId);
-      let open = '';
+      // let open = '';
       //check if shop has its hours listed
-      if (response.results[0].hasOwnProperty('opening_hours')) {
-        //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
-        if (response.results[0].opening_hours.open_now) {
-          open = '<p style="color:#0f0;">Open now</p>';
-        } else {
-          open = '<p style="color:#f00;">Closed now</p>';
-        }
-      }
+      // if (response.results[0].hasOwnProperty('opening_hours')) {
+      //   //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
+      //   if (response.results[0].opening_hours.open_now) {
+      //     open = '<p style="color:#0f0;">Open now</p>';
+      //   } else {
+      //     open = '<p style="color:#f00;">Closed now</p>';
+      //   }
+      // }
+
+      isOpen(response.results[0]);
 
       //send GET request to Places Details API for shop info
       $.get(`https://crossorigin.me/${placeIdUrl}`).done(function(response) {
@@ -84,4 +68,41 @@ function initMap() {
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
   });
+}
+
+function removeMarker(marker) {
+  marker.setMap(null);
+}
+
+function removeMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+}
+
+//we need to tie into the map which is currently scoped to the initMap, so this DOESN'T WORK FOR NOW
+function showMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+//format the URL for the call to Places API
+function placesUrl(shopname) {
+  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${shopname}&key=${PLACES_KEY}`
+}
+//format the URL for the call to Places Details API
+function placeDetailsUrl(id) {
+  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${PLACES_KEY}`
+}
+
+function isOpen(res) {
+  if (res.hasOwnProperty('opening_hours')) {
+    //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
+    if (res.opening_hours.open_now) {
+      open = '<p style="color:#0f0;">Open now</p>';
+    } else {
+      open = '<p style="color:#f00;">Closed now</p>';
+    }
+  }
 }
