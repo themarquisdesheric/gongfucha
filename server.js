@@ -56,7 +56,7 @@ app.post('/tea', function(request, response) {
     ]
   )
   .then(function() {
-    response.send('insert complete');
+    response.status(201).send('insert complete');
   })
   .catch(function(err){
     console.log(err);

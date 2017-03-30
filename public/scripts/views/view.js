@@ -30,13 +30,13 @@ view.populateFilters = function () {
   $('article').each(function () {
     if (!$(this).hasClass('template')) {
       var val = $(this).attr('data-category');
-      var optionBox = `<div class="select-box" id="${val}">${val}</div>`;
-      if ($('#category-filter:not(:contains('+`<div class="select-box" id="${val}">${val}</div>`+'))')) {
+      var optionBox = `<div class="select-box" data-category="${val}">${val}</div>`;
+      if (!document.querySelector(`div[data-category="${val}"]`)) {
         $('#category-filter').append(optionBox);
       }
       val = $(this).attr('data-city');
-      var optionBox = `<div class="select-box" id="${val}">${val}</div>`;
-      if ($('#city-filter:not(:contains('+`<div class="select-box" id="${val}">${val}</div>`+'))')) {
+      var optionBox = `<div class="select-box" data-city="${val}">${val}</div>`;
+      if (!document.querySelector(`div[data-city="${val}"]`)) {
         $('#city-filter').append(optionBox);
       }
     }
@@ -48,8 +48,7 @@ view.tags = ['init'];
 
 view.toggleButton = function () {
   $('.filter').on('click', "div", function (e) {
-    // $(e.target).toggleClass(".clicked");
-    console.log(e);
+    e.target.classList.toggle("tagged");
     var idx = view.tags.indexOf(e.target.textContent);
       if (idx === -1) {
         view.tags.push(e.target.textContent);
@@ -68,7 +67,6 @@ view.handleCategoryFilter = function() {
       view.tags.map(function(i) {
         $(`article[data-category="${(i)}"]`).fadeIn();
         $(`article[data-city="${(i)}"]`).fadeIn();
-        console.log(`article[data-category="${(i)}"]`);
       })
     } else {
       $('article').fadeIn();

@@ -22,9 +22,13 @@ Places & Search
 #places a {
   text-decoration: none; }
 
+.search-bar {
+  text-align: center;
+  margin-bottom: 2% }
+
 #search-settings-nav {
   width: 100%;
-  background-color: palevioletred;
+  background-color: darkgray;
   color: white;
   text-align: center;
   font-size: 20px;
@@ -40,12 +44,15 @@ Places & Search
   display: inline-block; }
 
 .select-box {
-  display: inline;
+  font-size: 15px;
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
   border: 1px solid darkgray;
   background-color: white;
 }
 
-.clicked {
+.tagged {
   background-color: green;
   color: white; }
 
