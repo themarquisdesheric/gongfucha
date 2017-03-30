@@ -3,6 +3,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css?family=Eagle+Lake');
+@import url('https://fonts.googleapis.com/css?family=Kameron|Merriweather|Montserrat|Walter+Turncoat');
 
 body {
   width: 100%;
@@ -15,14 +16,17 @@ body {
 
 h1 {
   font-size: 2em;
+  font-family: 'Eagle Lake';
 }
 
 h2 {
   font-size: 1.625em;
+  font-family: 'Montserrat';
 }
 
 h3 {
   font-size: 1.375em;
+  font-family: 'Montserrat';
 }
 
 main {
