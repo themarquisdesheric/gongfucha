@@ -66,7 +66,7 @@
     "category": "tea shop"
   },
   {
-    "shopName": "LockCha Tea House",
+    "shopname": "LockCha Tea House",
     "shopUrl": "http://www.lockcha.com/",
     "description": "<p>Tranquil outfit in the middle of a park offering vegetarian dim sum dishes & premium teas.</p>",
     "street": "Man Shing Industrial Building Suite 1601, 307-311",
@@ -77,7 +77,7 @@
     "category": "tea house"
   },
   {
-    "shopName": "Wisteria Tea House",
+    "shopname": "Wisteria Tea House",
     "shopUrl": "http://www.wistariateahouse.com/",
     "description": "<p>Wistaria House is a well-known and historically important teahouse located in the Daan District, of Taipei, Taiwan. The establishment is situated in a Japanese-style wooden house built in the 1920s on Xinsheng South Road. The teahouse is named after the three wisteria vines planted in the front courtyard forming a shaded area leading to the entrance of the building.</p>",
     "street": "No. 1, Lane 16, Section 3, Xinsheng South Road, Da’an District",
@@ -88,7 +88,7 @@
     "category": "tea house"
   },
   {
-    "shopName": "Lin Ceramic's Studio",
+    "shopname": "Lin Ceramic's Studio",
     "shopUrl": "http://www.aurlia.com.tw/theme.php",
     "description": "<p>Starting from make a small pot, it has now become an innovative brand name in tea wares in Great China. The classic kettle set has become an essential ware for teahouses as well as an important element in tea culture. In addition, Lin’s Ceramics Studio was also a sponsor of the Tea Serving Presentation in Taiwan Pavilion Expo 2010 Shanghai China.</p>",
     "street": "No. 8, Lane 6, Yongkang Street, Da’an District",
