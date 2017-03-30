@@ -5,12 +5,14 @@
 @import url('https://fonts.googleapis.com/css?family=Eagle+Lake');
 
 body {
+  background-color: white;
   width: 100%;
   font-size: 1.15em;
   line-height: 2em;
   color: black;
   overflow-x: hidden;
   font-family: 'Raleway', sans-serif;
+  
 }
 
 h1 {
@@ -23,9 +25,5 @@ h2 {
 
 h3 {
   font-size: 1.375em;
-}
-
-main {
-  margin-top: 5%;
 }
 

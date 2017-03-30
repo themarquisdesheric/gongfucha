@@ -6,8 +6,8 @@
 	<title>Gong Fu Cha</title>
 	<link type="text/css" rel="stylesheet" href="vendor/styles/meyer.css">
 	<link type="text/css" rel="stylesheet" href="styles/base.css">
-	<link type="text/css" rel="stylesheet" href="styles/layout.css">
 	<link type="text/css" rel="stylesheet" href="styles/module.css">
+	<link type="text/css" rel="stylesheet" href="styles/layout.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<script id="tealocation-template" type="text/x-handlebars-template">
@@ -22,11 +22,16 @@
 	</script>
 </head>
 <body>
-	<section id="landing-wrapper">
+	<div id="video-wrapper">
+			<video id="bgvid" playsinline autoplay loop poster="assets/img/kettle-steam-small.jpg">
+				<source
+				src="assets/movie/landing-page-video.webm" type="video/webm">
+			</video>
+			</div>
+		<header>
 		<div id="teapot-logo-div">
 			<img id="teapot-logo" src="assets/img/icons/teapot-logo-01.svg">
 		</div>
-		<header>
 			<nav>
 				<ul>
 					<li id="first-tab" class="tab" data-content="home"><a href="/">Home</a></li>
@@ -42,86 +47,81 @@
 					<h1>Welcome to Gong Fu Cha</h1>
 					<h3>We're a group of Gong Fu Cha tea enthusiasts, dedicated to bringing you the best tea houses and shops for your Gong Fu Cha needs.</h3>
 				</div>
-				<video id="bgvid" playsinline autoplay loop>
-					<source
-					src="assets/movie/landing-page-video.webm" type="video/webm">
-				</video>
 				<div id="arrow"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
 			</section>
-		</section>
-		<section id="places" class="tab-content ">
-			<h2>Tea Locator</h2>
-			<div id="search-settings-nav">Search Settings <i class="fa fa-cog" aria-hidden="true"></i></div>
-			<div id="search-settings">
-					<section class="search-column">
-						<select id="category-filter">
-						<option value="">-- All Categories --</option>
-						</select>
-					</section>
-					<section class="search-column" id="search-city">
-						<select multiple id="city-filter">
-							<option value="">-- All Cities --</option>
-						</select>
-					</section>
-			</div>
-			<!-- GOOGLE MAPS -->
-			<div id="map-parent">
-				<div id="tea-sidebar"></div>
-				<div id="map"></div>
-			</div>
-		</section>
-		<section id="about" class="tab-content">
-			<h2>About</h2>
-			<p>Gong Fu Cha is a community of tea enthusiasts; we come together to celebrate good tea and tea ceremonies.</p>
-		</section>
-		<section id="submit" class="tab-content">
-			<h2>Submit</h2>
-			<p>We welcome new submissions from our users. Submit a new Gong Fu Cha tea shop, tea house or tea event here.</p>
-			<p>Enter your new tea house, shop, or location into the form below:</p>
-			<form id="new-tea-location">
-				  <div class="full-width">
-						<div class="two-field-form">
-							<label for="shop-name">Shop Name</label>
-							<input class="full-width" name="shop-name" type="text">
+			<section id="places" class="tab-content ">
+				<h2 id="locator-heading">Tea Locator</h2>
+				<div id="search-settings-nav">Search Settings <i class="fa fa-cog" aria-hidden="true"></i></div>
+				<div id="search-settings">
+						<section class="search-column">
+							<select id="category-filter">
+							<option value="">-- All Categories --</option>
+							</select>
+						</section>
+						<section class="search-column" id="search-city">
+							<select multiple id="city-filter">
+								<option value="">-- All Cities --</option>
+							</select>
+						</section>
+				</div>
+				<!-- GOOGLE MAPS -->
+				<div id="map-parent">
+					<div id="tea-sidebar"></div>
+					<div id="map"></div>
+				</div>
+			</section>
+			<section id="about" class="tab-content">
+				<h2>About</h2>
+				<p>Gong Fu Cha is a community of tea enthusiasts; we come together to celebrate good tea and tea ceremonies.</p>
+			</section>
+			<section id="submit" class="tab-content">
+				<h2>Submit</h2>
+				<p>We welcome new submissions from our users. Submit a new Gong Fu Cha tea shop, tea house or tea event here.</p>
+				<p>Enter your new tea house, shop, or location into the form below:</p>
+				<form id="new-tea-location">
+						<div class="full-width">
+							<div class="two-field-form">
+								<label for="shop-name">Shop Name</label>
+								<input class="full-width" name="shop-name" type="text">
+							</div>
+							<div class="two-field-form">
+								<label for="shop-url">Website</label>
+								<input class="full-width" name="shop-url" type="text">
+							</div>
 						</div>
-						<div class="two-field-form">
-							<label for="shop-url">Website</label>
-							<input class="full-width" name="shop-url" type="text">
+						<div class="full-width">
+							<label for="shop-description">Description</label>
+							<input class="full-width" name="shop-descrip" placeholder="Describe your shop!" type="text">
 						</div>
-					</div>
-					<div class="full-width">
-						<label for="shop-description">Description</label>
-						<input class="full-width" name="shop-descrip" placeholder="Describe your shop!" type="text">
-				  </div>
-					<div class="full-width">
-						<label for="shop-street">Street Address</label>
-						<input class="full-width" name="shop-address-street" type="text">
-					</div>
-					<div class="full-width">
-						<div class="three-field-form">
-							<label for="shop-city">City</label>
-							<input class="full-width" name="shop-address-city" type="text">
-						</div><div class="three-field-form">
-							<label for="shop-state">State/ Province</label>
-							<input class="full-width" name="shop-address-state" type="text">
-						</div><div class="three-field-form">
-							<label for="shop-zip">Postal Code</label>
-							<input class="full-width" name="shop-zip" type="text">
+						<div class="full-width">
+							<label for="shop-street">Street Address</label>
+							<input class="full-width" name="shop-address-street" type="text">
 						</div>
-					</div>
-				  <div class="full-width">
-						<div class="two-field-form">
-							<label for="shop-country">Country</label>
-							<input class="full-width" name="shop-zip" type="text">
+						<div class="full-width">
+							<div class="three-field-form">
+								<label for="shop-city">City</label>
+								<input class="full-width" name="shop-address-city" type="text">
+							</div><div class="three-field-form">
+								<label for="shop-state">State/ Province</label>
+								<input class="full-width" name="shop-address-state" type="text">
+							</div><div class="three-field-form">
+								<label for="shop-zip">Postal Code</label>
+								<input class="full-width" name="shop-zip" type="text">
+							</div>
 						</div>
-						<div class="two-field-form">
-							<label for="shop-url">Email</label>
-							<input class="full-width" name="shop-url" placeholder="Email" type="text">
+						<div class="full-width">
+							<div class="two-field-form">
+								<label for="shop-country">Country</label>
+								<input class="full-width" name="shop-zip" type="text">
+							</div>
+							<div class="two-field-form">
+								<label for="shop-url">Email</label>
+								<input class="full-width" name="shop-url" placeholder="Email" type="text">
+							</div>
 						</div>
-					</div>
-					<input class="button" type="submit">
-			</form>
-		</section>
+						<input class="button" type="submit">
+				</form>
+			</section>
 	</main>
 	<footer>
 		<small>&copy; Gong Fu Cha | 2017</small>
