@@ -26,58 +26,54 @@ var searchAnimation = function() {
 Filters (Tea Locations)
 ------------------------------*/
 //This function grabs the data attributes from our tea list and populates the search filters.
-view.populateFilters = function() {
-  $('article').each(function() {
+view.populateFilters = function () {
+  $('article').each(function () {
     if (!$(this).hasClass('template')) {
       var val = $(this).attr('data-category');
-      var optionTag = `<option value="${val}">${val}</option>`;
-      if (!$(`#category-filter option[value="${val}"]`).length && val) {
-        $('#category-filter').append(optionTag);
+      var optionBox = `<div class="select-box" id="${val}">${val}</div>`;
+      if ($('#category-filter:not(:contains('+`<div class="select-box" id="${val}">${val}</div>`+'))')) {
+        $('#category-filter').append(optionBox);
       }
-
       val = $(this).attr('data-city');
-      optionTag = `<option value="${val}">${val}</option>`;
-      if (!$(`#city-filter option[value="${val}"]`).length && val) {
-        $('#city-filter').append(optionTag);
+      var optionBox = `<div class="select-box" id="${val}">${val}</div>`;
+      if ($('#city-filter:not(:contains('+`<div class="select-box" id="${val}">${val}</div>`+'))')) {
+        $('#city-filter').append(optionBox);
       }
     }
-  });
+  })
 };
 
 //Event listener and handler for Category
-view.handleCategoryFilter = function() {
-  $('#category-filter').on('change', function() {
-    if ($(this).val()) {
-      $('article').hide();
-      $(`article[data-category="${$(this).val()}"]`).fadeIn();
-    } else {
-      $('article').fadeIn();
-      $('article.template').hide();
-    }
-    $('#city-filter').val('');
+view.tags = ['init'];
+
+view.toggleButton = function () {
+  $('.filter').on('click', "div", function (e) {
+    // $(e.target).toggleClass(".clicked");
+    console.log(e);
+    var idx = view.tags.indexOf(e.target.textContent);
+      if (idx === -1) {
+        view.tags.push(e.target.textContent);
+        console.log("Filtered array:", view.tags);
+        view.handleCategoryFilter();
+      } else {
+        view.tags.splice(idx, 1);
+        view.handleCategoryFilter();
+      }
   });
 };
 
-// view.toggleButton = function() {
-//   $('#search-city').on('click', ,function() {
-//       $(`article[data-city="${$(this).val()}"]`).toggle();
-//   });
-// };
-
-//Event listener and handler for Cities
-view.handleCityFilter = function() {
-  $('#city-filter').on('change', function() {
-    if ($(this).val()) {
-      $('article').hide();
-      $.each($(this).val(), function(index, city) {
-        $(`article[data-city="${city}"]`).fadeIn();
+view.handleCategoryFilter = function() {
+    $('article').hide();
+    if (view.tags) {
+      view.tags.map(function(i) {
+        $(`article[data-category="${(i)}"]`).fadeIn();
+        $(`article[data-city="${(i)}"]`).fadeIn();
+        console.log(`article[data-category="${(i)}"]`);
       })
     } else {
       $('article').fadeIn();
       $('article.template').hide();
-    }
-    $('#category-filter').val('');
-  });
+  };
 };
 
 /*------------------------------
@@ -118,10 +114,13 @@ view.initIndexPage = function () {
   //End code needed for Maps API
 
   view.populateFilters();
-  view.handleCategoryFilter();
-  view.handleCityFilter();
+  view.toggleButton();
+  $('.hide').hide();
+  $('.readmore').click(function(e){
+    e.preventDefault();
+    $(this).parent().find('.hide').slideToggle('slow');
+    $(this).text($(this).text() == 'Read less...' ? 'Read more...' : 'Read less...');
+  })
 };
 
 TeaLocation.fetchAll(view.initIndexPage);
-
-

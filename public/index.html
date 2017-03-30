@@ -16,7 +16,8 @@
 				<h3><a href="{{shopUrl}}">{{shopname}}</a></h3>
 				<p>{{street}}, {{city}} {{zip}}</p>
 			</div>
-			<section class="tealocation-body">{{{ description }}}</section>
+			<section class="hide" class="tealocation-body">{{{ description }}}</section>
+			<a class="readmore" href="#">Read more...</a>
 			<section class="spacer"> --- </section>
 		</article>
 	</script>
@@ -49,45 +50,43 @@
 				</div>
 				<div id="arrow"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
 			</section>
-			<section id="places" class="tab-content ">
-				<h2 id="locator-heading">Tea Locator</h2>
-				<div id="search-settings-nav">Search Settings <i class="fa fa-cog" aria-hidden="true"></i></div>
-				<div id="search-settings">
-						<section class="search-column">
-							<select id="category-filter">
-							<option value="">-- All Categories --</option>
-							</select>
-						</section>
-						<section class="search-column" id="search-city">
-							<select multiple id="city-filter">
-								<option value="">-- All Cities --</option>
-							</select>
-						</section>
-				</div>
-				<!-- GOOGLE MAPS -->
-				<div id="map-parent">
-					<div id="tea-sidebar"></div>
-					<div id="map"></div>
-				</div>
-			</section>
-			<section id="about" class="tab-content">
-				<h2>About</h2>
-				<p>Gong Fu Cha is a community of tea enthusiasts; we come together to celebrate good tea and tea ceremonies.</p>
-			</section>
-			<section id="submit" class="tab-content">
-				<h2>Submit</h2>
-				<p>We welcome new submissions from our users. Submit a new Gong Fu Cha tea shop, tea house or tea event here.</p>
-				<p>Enter your new tea house, shop, or location into the form below:</p>
-				<form id="new-tea-location">
-						<div class="full-width">
-							<div class="two-field-form">
-								<label for="shop-name">Shop Name</label>
-								<input class="full-width" name="shop-name" type="text">
-							</div>
-							<div class="two-field-form">
-								<label for="shop-url">Website</label>
-								<input class="full-width" name="shop-url" type="text">
-							</div>
+		<section id="places" class="tab-content ">
+			<h2>Tea Locator</h2>
+			<p>Search for a specific tea shop or location here:</p>
+			<div id="search-box"><input><div>
+			<div id="search-settings-nav">Search Settings <i class="fa fa-cog" aria-hidden="true"></i></div>
+			<div id="search-settings">
+					<section class="search-column">
+						<div class="filter" id="category-filter"></div>
+					</section>
+					<section class="search-column" id="search-city">
+						<div class="filter" id="city-filter"></div>
+					</section>
+			</div>
+			<!-- GOOGLE MAPS -->
+			<div id="map-parent">
+				<div id="tea-sidebar"></div>
+				<div id="map"></div>
+			</div>
+		</section>
+		<section id="about" class="tab-content">
+			<h2>About</h2>
+			<p>Gong Fu Cha is a community of tea enthusiasts. Our purpose is to celebrate, spread, develop, and illuminate the rich culture and activity that is Gong Fu Cha. We provide a place for social networking between tea enthusiasts, facilitate tea gatherings and meet ups, and provide find information on the what, where, why, when, and how of Gong Fu Cha for people both new and experienced.
+			<p>We founded Gong Fu Cha Community to facilitate easy access through personal referrals/reviews to quality tea companies, tea ware, tea blogs, and tea itself. Our users build this database; all reviews and locations are user-generated, not automatically pulled from any outside sites.</p>
+			<aside>
+				<p><a href="https://www.facebook.com/groups/gongfucha/"><i class="fa fa-facebook" aria-hidden="true"></i> Join our Facebook Group</a></p> 
+				<p><i class="fa fa-coffee" aria-hidden="true"></i> Join a Tea Meetup</p>
+			</aside>
+		</section>
+		<section id="submit" class="tab-content">
+			<h2>Submit</h2>
+			<p>We welcome new submissions from our users. Submit a new Gong Fu Cha tea shop, tea house or tea event here.</p>
+			<p>Enter your new tea house, shop, or location into the form below:</p>
+			<form id="new-tea-location">
+				  <div class="full-width">
+						<div class="two-field-form">
+							<label for="shop-name">Shop Name</label>
+							<input class="full-width" name="shop-name" type="text">
 						</div>
 						<div class="full-width">
 							<label for="shop-description">Description</label>
@@ -137,7 +136,7 @@
 	<!-- SCRIPTS -->
 	<script src="scripts/models/model.js"></script>
 	<script src="api_key.js"></script>
-	<script src="scripts/models/google_map.js"></script>  
+	<!--<script src="scripts/models/google_map.js"></script>  -->
 	<script src="scripts/views/view.js"></script>
 	<script src="scripts/views/homeView.js"></script>
 	<script src="scripts/controllers/controller.js"></script>
