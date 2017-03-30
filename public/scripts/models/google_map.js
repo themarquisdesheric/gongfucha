@@ -29,20 +29,10 @@ function initMap() {
       $.get(`https://crossorigin.me/${placeIdUrl}`).done(function(response) {
         console.log('Place Details response: ', response);
 
-        //create marker for shop
-        let marker = new google.maps.Marker({
-          position: response.result.geometry.location,
-          map: map,
-        });
-        //create info window for marker
-        let infoWindow = new google.maps.InfoWindow({
-          content: `<p style="font-weight:bold;">${locations[i].shopname}</p>
-                    <p>${response.result.formatted_address}</p>
-                    ${open}
-                    <p>${response.result.formatted_phone_number}</p>
-                    <p><a href="${response.result.website}">${response.result.website}</a></p>`,
-          maxWidth: 120
-        });
+        let marker = createMarker(response, map);
+
+        let infoWindow = createInfoWindow(response, locations[i]);
+
         //click handler to open info windows
         marker.addListener('click', function() {
           infoWindow.open(map, marker);
@@ -59,6 +49,24 @@ function initMap() {
     const center = map.getCenter();
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
+  });
+}
+
+function createMarker(res, map) {
+  return new google.maps.Marker({
+    position: res.result.geometry.location,
+    map: map,
+  });
+}
+
+function createInfoWindow(res, shop) {
+  return new google.maps.InfoWindow({
+    content: `<p style="font-weight:bold;">${shop.shopname}</p>
+              <p>${res.result.formatted_address}</p>
+              ${open}
+              <p>${res.result.formatted_phone_number}</p>
+              <p><a href="${res.result.website}">${res.result.website}</a></p>`,
+    maxWidth: 120
   });
 }
 
