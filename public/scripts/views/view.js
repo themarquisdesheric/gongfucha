@@ -91,8 +91,12 @@ view.initIndexPage = function () {
   view.populateFilters();
   view.handleCategoryFilter();
   view.handleCityFilter();
+  $('.hide').hide();
+  $('.readmore').click(function(e){
+    e.preventDefault();
+    $(this).parent().find('.hide').slideToggle('slow');
+    $(this).text($(this).text() == 'Read less...' ? 'Read more...' : 'Read less...');
+  })
 };
 
 TeaLocation.fetchAll(view.initIndexPage);
-
-
