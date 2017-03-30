@@ -24,7 +24,7 @@ Places & Search
 
 #search-settings-nav {
   width: 100%;
-  background-color: gray;
+  background-color: palevioletred;
   color: white;
   text-align: center;
   font-size: 20px;
@@ -38,6 +38,16 @@ Places & Search
 .search-column {
   width: 45%;
   display: inline-block; }
+
+.select-box {
+  display: inline;
+  border: 1px solid darkgray;
+  background-color: white;
+}
+
+.clicked {
+  background-color: green;
+  color: white; }
 
 .shopheader {
   margin: 10px 0%;
@@ -54,13 +64,26 @@ Places & Search
 /*-----------
 About & Submit
 ------------*/
+#about p {
+  margin-bottom: 20px; }
+
+aside {
+  text-align: center;
+  font-style: italic; }
+
 #about, #submit {
-  padding: 15%; }
+  padding: 5% 15%; }
 
 #about {
+  color: white;
   background-image: url('/assets/img/puer-tea-table.png');
-  background-size: 100%; 
-  background-color:rgba(0,0,0, 0.8); }
+  background-size: 100%;  }
+
+#about a,
+#about a:visited {
+  color: white;
+  text-decoration: none;
+}
 
 #about h2, #submit h2 {
   font-size: 40px;
@@ -102,3 +125,4 @@ Sidebar & Map
     display: inline-block;
     overflow: scroll;
   }
+}
