@@ -15,33 +15,28 @@ function initMap() {
   //loop through locations array and populate map with markers
   for (let i = 0; i < locations.length; i++) {
     let url = placesUrl(locations[i].shopname);
-    //send GET request to Places API to obtain place ID
-    $.get(`https://crossorigin.me/${url}`).done(function (response) {
 
-      console.log(response);
+    // $.get(`/maps?query=${locations[i].shopname}`)
+    //   .then(response => {
+    //     console.log(locations[i].shopname, response)
+    //   });
 
-      let placeId = response.results[0].place_id;
-      let placeIdUrl = placeDetailsUrl(placeId);
-      //check if shop is open
-      isOpen(response.results[0]);
+    //send GET request to Places Details API for shop info
+    $.get(`/maps?query=${locations[i].shopname}`).done(function(response) {
+      console.log('Place Details response: ', response);
 
-      //send GET request to Places Details API for shop info
-      $.get(`https://crossorigin.me/${placeIdUrl}`).done(function(response) {
-        console.log('Place Details response: ', response);
+      let marker = createMarker(response, map);
 
-        let marker = createMarker(response, map);
+      let infoWindow = createInfoWindow(response, locations[i]);
 
-        let infoWindow = createInfoWindow(response, locations[i]);
-
-        //click handler to open info windows
-        marker.addListener('click', function() {
-          infoWindow.open(map, marker);
-        });
-        //add reference to marker to corresponding shop
-        locations[i].marker = marker;
-        //markers array so we can clear existing markers from the map/repopulate them
-        markers.push(marker);
+      //click handler to open info windows
+      marker.addListener('click', function() {
+        infoWindow.open(map, marker);
       });
+      //add reference to marker to corresponding shop
+      locations[i].marker = marker;
+      //markers array so we can clear existing markers from the map/repopulate them
+      markers.push(marker);
     });
   }
   //re-center map upon window resize

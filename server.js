@@ -3,6 +3,7 @@
 const pg = require('pg');
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const superAgent = require('superagent');
 const express = require('express');
 const app = express();
 
@@ -35,6 +36,19 @@ app.get('/tea', function (request, response) {
     .catch(function (err) {
       console.log(err);
     })
+});
+
+app.get('/maps', function(request, response) {
+  superAgent
+    .get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${request.query.query}&key=${process.env.API_KEY}`)
+    .then(results => results.body)
+    .then(place => {
+      let id = place.results[0].place_id;
+      superAgent
+        .get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${process.env.API_KEY}`)
+        .then(result => response.send(result.body))
+    })
+    .catch(error => response.send(error));
 });
 
 // Insert into tables
