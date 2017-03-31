@@ -42,11 +42,17 @@ Manipulating Tea Location Database
 //NOTE 03-30-17: This code is being tested and may not be fully functional
 //insert a new tea shop from the form
 TeaLocation.insertLocation = function (data, callback) {
-  console.log('newLocation:', data[0].value);
-  $.post('/tea', {
+  const newLocation = {
     shopname: data[0].value, shopUrl: data[1].value, description: data[2].value, 
     street: data[3].value, city: data[4].value, state: data[5].value, zip: data[6].value,
     country: data[7].value, category: data[8].value
+  }
+  console.log('newLocation:', data[0].value);
+  $.ajax({
+    url: '/tea', 
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(newLocation)
   })
     .then( 
       results => {
