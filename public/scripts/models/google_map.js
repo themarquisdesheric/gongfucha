@@ -73,10 +73,9 @@ function removeMarkers() {
   });
 }
 
-//we need to tie into the map which is currently scoped to the initMap, so this DOESN'T WORK FOR NOW
 function showMarkers() {
   markers.forEach(marker => {
-    marker.setMap(map);
+    marker.setMap(gMap);
   });
 }
 
