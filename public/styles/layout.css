@@ -268,8 +268,10 @@ Sidebar & Map
   }
 
   #youtube-video {
+  display: block;
   width: 80%;
   margin: 0px auto;
+  margin-bottom: 2%;
   }
 
   #youtube-video iframe {
