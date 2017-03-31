@@ -48,7 +48,7 @@
     "shopUrl": "http://www.songfangtea.com/",
     "description": "<p>Song Fang Maison de Thé specializes in the finest quality Chinese and French teas for sale and to savor on the premises. They offer a selection of 70 premium teas from China and France.</p>",
     "street": "227 Yongjia Rd",
-    "city": "Shanghai Shi",
+    "city": "Shanghai",
     "state": "Xuhui Qu",
     "zip": "200020",
     "country": "China",
@@ -59,7 +59,7 @@
     "shopUrl": "",
     "description": "<p></p>",
     "street": "Yunfang E Rd, Xishan Qu",
-    "city": " Yunnan",
+    "city": "Yunnan",
     "state": "Kunming",
     "zip": "650034",
     "country": "China",
@@ -97,5 +97,49 @@
     "zip": "106",
     "country": "Taiwan",
     "category": "tea shop"
+  },
+  {
+    "shopname": "Far West Tea Traders",
+    "shopUrl": "http://farwesttea.com/",
+    "description": "<p>We only procure teas that stand out with a distinctive and memorable character and supply them directly to you at the lowest possible price.  We are a company dedicated to enriching people’s lives through the love of tea and the alchemy of tea time.</p>",
+    "street": "No. 8, Lane 6, Yongkang Street, Da’an District",
+    "city": "Santa Barbera",
+    "state": "CA",
+    "zip": "",
+    "country": "USA",
+    "category": "tea production"
+  },
+  {
+    "shopname": "West China Tea Company",
+    "shopUrl": "http://westchinateacompany.com/",
+    "description": "<p>We specialize in farm-direct tea and artisan tea ware that we obtain by going directly to the source.</p>",
+    "street": "2908 Fruth St,",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78705",
+    "country": "USA",
+    "category": "tea shop"
+  },
+  {
+    "shopname": "Wan Ling Tea House",
+    "shopUrl": "http://www.wanlingteahouse.com/section.php/116/1/shanghai-tea-house",
+    "description": "<p>Wan Ling Tea House is the coming together of tea lovers from opposite sides of the world. Our aim is to bring carefully selected loose leaf teas and a wealth of collected information together. Giving people the chance to better understand and explore the fascinating world of tea. And our actual ‘brick and mortar’ Shanghai tea house & tea shop.</p>",
+    "street": "Xizang Middle Rd, 268",
+    "city": "Shanghai",
+    "state": "Huangpu Qu",
+    "zip": "200000",
+    "country": "China",
+    "category": "tea house"
+  },
+  {
+    "shopname": "Springs and Autumns",
+    "shopUrl": "http://www.springsandautumns.com/",
+    "description": "<p>Based in Taipei's cultural district, Springs and Autumns is an online store sourcing teaware and objects of daily use from Taiwan and East Asia.</p>",
+    "street": "Online Retailer",
+    "city": "Taipei",
+    "state": "",
+    "zip": "Taiwan",
+    "country": "106",
+    "category": "tea production"
   }
 ]

@@ -7,7 +7,7 @@ let gMap;
 function initMap() {
   //initialize map and center it
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
+    zoom: 1,
     center: {lat: 45.549863, lng: -122.675790},
     scrollwheel: false
   });
