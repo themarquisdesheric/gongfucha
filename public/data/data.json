@@ -141,5 +141,16 @@
     "zip": "Taiwan",
     "country": "106",
     "category": "tea production"
+  },
+  {
+    "shopname": "Red Blossom Tea Company",
+    "shopUrl": "https://www.redblossomtea.com/",
+    "description": "<p>Red Blossom Tea Company is first and foremost a family owned tea shop in San Francisco's Chinatown, but we are also much more. We are direct importers, traveling thousands of miles in search of rare teas and artisan tea ware. We are educators, striving to bring the richness of traditional tea culture to our customers. And most importantly, we are tea lovers. We love to drink tea, talk tea, think tea and even obsess over tea.</p>",
+    "street": "831 Grant Ave, CA 94108",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "country": "united states",
+    "category": "tea shop"
   }
 ]
