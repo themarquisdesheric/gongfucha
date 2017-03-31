@@ -2,9 +2,6 @@
   Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like THIS.
 */
 
-@import url('https://fonts.googleapis.com/css?family=Eagle+Lake');
-@import url('https://fonts.googleapis.com/css?family=Kameron|Merriweather|Montserrat|Walter+Turncoat');
-
 body {
   background-color: white;
   width: 100%;
@@ -12,7 +9,7 @@ body {
   line-height: 2em;
   color: black;
   overflow-x: hidden;
-	font-family: 'trench', sans-serif;
+	font-family: 'Poiret One', cursive;
 }
 
 h1 {
@@ -37,25 +34,13 @@ main {
 }
 
 /*FONTS*/
-@font-face {
+/*@font-face {
 	font-family: 'levibrush';
-	src: url('/fonts/levibrush.ttf'); 
+	src: url('/fonts/levibrush-webfont.ttf') format(truetype), url('/fonts/levibrush-webfont.otf') format(opentype); ; 
 }
-@font-face {
-	font-family: 'ormont';
-	src: url('/fonts/ormont-light-copy.otf'); 
-	/*src: 
-		local('Lovely Font'),
-		local('Lovely-Font'),
-		url('fonts/lovely_font.otf') 
-		format('opentype');*/
-}
+
 @font-face {
 	font-family: 'trench';
-	src: url('/fonts/trench-100-free.otf'); 
-	src: 
-		local('trench'),
-		url('fonts/lovely_font.otf') 
-		format('truetype');
-}
+	src: url('/fonts/trench-100-free-webfont.otf') format(opentype), url('/fonts/trench-100-free-webfont.ttf') format(truetype); ; 
+}*/
 
