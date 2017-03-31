@@ -12,36 +12,23 @@ body {
   line-height: 2em;
   color: black;
   overflow-x: hidden;
-   /*font-family: 'Raleway', sans-serif;*/
-  /*font-family: 'Open Sans', sans-serif;*/
-/*font-family: 'Muli', sans-serif;*/
-/*font-family: 'Quicksand', sans-serif;*/
-/*font-family: 'europe', sans-serif;*/
-font-family: 'ormont', sans-serif;
+	font-family: 'trench', sans-serif;
 }
 
 h1 {
   font-size: 2em;
-  font-family: 'Eagle Lake';
 }
 
 h2 {
   font-size: 1.625em;
-  font-family: 'Montserrat';
 }
 
 h3 {
   font-size: 1.375em;
-  font-family: 'Montserrat';
 }
 
 main {
   margin-top: 5%;
-}
-
-/*For read more/less clicker*/
-.readmore {
-  font-family: 'Eagle Lake';
 }
 
 /*Pointer for arrow*/
@@ -52,7 +39,20 @@ main {
 /*FONTS*/
 @font-face {
 	font-family: 'levibrush';
-	src: url('fonts/levibrush.ttf'); 
+	src: url('/fonts/levibrush.ttf'); 
+}
+@font-face {
+	font-family: 'ormont';
+	src: url('/fonts/ormont-light-copy.otf'); 
+	/*src: 
+		local('Lovely Font'),
+		local('Lovely-Font'),
+		url('fonts/lovely_font.otf') 
+		format('opentype');*/
+}
+@font-face {
+	font-family: 'trench';
+	src: url('/fonts/trench-100-free.otf'); 
 	/*src: 
 		local('Lovely Font'),
 		local('Lovely-Font'),
@@ -60,30 +60,3 @@ main {
 		format('opentype');*/
 }
 
-@font-face {
-	font-family: 'europe';
-	src: url('fonts/europe-underground-light.ttf'); 
-	/*src: 
-		local('Lovely Font'),
-		local('Lovely-Font'),
-		url('fonts/lovely_font.otf') 
-		format('opentype');*/
-}
-@font-face {
-	font-family: 'ormont';
-	src: url('fonts/ormont-light-copy.otf'); 
-	/*src: 
-		local('Lovely Font'),
-		local('Lovely-Font'),
-		url('fonts/lovely_font.otf') 
-		format('opentype');*/
-}
-@font-face {
-	font-family: 'vnhl';
-	src: url('fonts/vnhltfap.ttf'); 
-	/*src: 
-		local('Lovely Font'),
-		local('Lovely-Font'),
-		url('fonts/lovely_font.otf') 
-		format('opentype');*/
-}

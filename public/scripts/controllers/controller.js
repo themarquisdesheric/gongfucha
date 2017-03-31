@@ -42,6 +42,19 @@
     module.submitController = submitController;
 })(window);
 
+//For arrow clicker
+$('#arrow').click(function() {
+    $('html, body').animate({
+        scrollTop: $('#locator-heading').offset().top
+    }, 1000);
+});
+
+$('#tea-map-link').click(function() {
+    $('html, body').animate({
+        scrollTop: $('#locator-heading').offset().top
+    }, 1000);
+});
+
 // Initialize all routes
 page('/', homeController.render);
 page('/about', aboutController.render);
@@ -51,9 +64,5 @@ page('/submit', submitController.render);
 // Activate page.js
 page();
 
-//For arrow clicker
-$("#arrow").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#locator-heading").offset().top
-    }, 1000);
-});
+
+

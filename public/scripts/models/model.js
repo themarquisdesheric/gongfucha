@@ -35,3 +35,49 @@ TeaLocation.prototype.toHtml = function () {
   var template = Handlebars.compile(source);
   return template(this);
 };
+
+/*------------------------------
+Manipulating Tea Location Database
+------------------------------*/
+//NOTE 03-30-17: This code is being tested and may not be fully functional
+//insert a new tea shop from the form
+TeaLocation.insertLocation = function (data, callback) {
+  console.log('newLocation:', data[0].value);
+  $.post('/tea', {
+    shopname: data[0].value, shopUrl: data[1].value, description: data[2].value, 
+    street: data[3].value, city: data[4].value, state: data[5].value, zip: data[6].value,
+    country: data[7].value, category: data[8].value
+  })
+    .then( 
+      results => {
+      console.log('insert success', results)
+      TeaLocation.loadAll(results);
+      callback();
+    }
+    ).catch(console.error);
+};
+
+//delete a tea shop
+TeaLocation.prototype.deleteLocation = function (callback) {
+  $.ajax({
+    url: `/tea/${this.tea_locations_id}`,
+    method: 'DELETE'
+  })
+    .then(console.log)
+    .then(callback);
+};
+
+//update a tea shop that exists
+TeaLocation.prototype.updateLocation = function (callback) {
+  $.ajax({
+    url: `/tea_locations/${this.article_id}`,
+    method: 'PUT',
+    data: {
+      shopname: this.shopname, shopUrl: this.shopUrl, description: this.description,
+      street: this.street, city: this.city, state: this.state, zip: this.zip,
+      country: this.country, category: this.category
+    }
+  })
+    .then(console.log)
+    .then(callback);
+};

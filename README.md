@@ -13,10 +13,10 @@ An interactive database for lovers and enthusiasts of gong fu cha.
 
 ## Main Highlights
 
-#### Comparing finishing times
-Compares the finishing times of all NYC finishers against their gender, age, nationality and longest training run (assuming 17 weeks prior to the marathon was their training cycle).
+#### Maps location data
+We use the Google Maps API to grab information about tea shops all over the world - however, that information is pulled from a database created by our users. We created a form.
 
-#### Breaking down runner demographics
+#### User-curated database
 Compares the finishing times of all NYC finishers against their gender, age, nationality and longest training run (assuming 17 weeks prior to the marathon was their training cycle).
 
 
@@ -24,7 +24,10 @@ Compares the finishing times of all NYC finishers against their gender, age, nat
 * WIP
 
 ## Special Thanks
-* WIP
+* Amy Chen
+* Aaron Krause
+* Tom Timmel
+* The class of 301d8 for the rubber-ducking and support
 
 ## About the Developers
 * Nicky
