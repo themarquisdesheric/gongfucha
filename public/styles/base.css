@@ -53,10 +53,9 @@ main {
 @font-face {
 	font-family: 'trench';
 	src: url('/fonts/trench-100-free.otf'); 
-	/*src: 
-		local('Lovely Font'),
-		local('Lovely-Font'),
+	src: 
+		local('trench'),
 		url('fonts/lovely_font.otf') 
-		format('opentype');*/
+		format('truetype');
 }
 
