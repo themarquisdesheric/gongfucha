@@ -87,19 +87,6 @@ $("#new-tea-location").submit(function(event) {
   let newLocation;
   newLocation = $(this).serializeArray() 
   $('#new-tea-location').empty();
-
-  // teaLocation = new TeaLocation({
-  //   shopName: $('#shop-name').val(),
-  //   shopUrl: $('#shop-url').val(),
-  //   description: $('#shop-description').val(),
-  //   street: $('#shop-street').val(),
-  //   city: $('#shop-city').val(),
-  //   state: $('#shop-state').val(),
-  //   zip: $('#shop-zip').val(),
-  //   country: $('#shop-country').val(),
-  //   category: $('#shop-category').val(),
-  // });
-  console.log(newLocation);
   //append new TeaLocation to database
   
   TeaLocation.insertLocation(newLocation, view.initIndexPage);

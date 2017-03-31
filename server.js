@@ -53,6 +53,7 @@ app.get('/maps', function(request, response) {
 
 // Insert into tables
 app.post('/tea', function(request, response) {
+  console.log(request.body);
   client.query(
     `INSERT INTO
     tea_locations(shopname, "shopUrl", description, street, city, state, zip, country, category)
