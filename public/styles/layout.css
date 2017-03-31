@@ -68,6 +68,7 @@ nav ul li {
   width: 85%;
   text-align: center;
   margin: 12% auto 17% auto; 
+  padding-top: 5px;
 }
 
 #arrow {
@@ -130,7 +131,10 @@ Places & Search
 
 .shopheader {
   margin: 10px 0%;
-  font-family: 'Eagle Lake', sans-serif; }
+  /*font-family: 'Reenie Beanie', cursive;*/
+  
+  /*font-family: 'Waiting for the Sunrise', cursive;*/
+  }
 
 .shopsection {
   line-height: 140%;
@@ -151,7 +155,8 @@ aside {
   font-style: italic; }
 
 #about, #submit {
-  padding: 5% 15%; }
+  padding: 5% 15%; 
+  padding-bottom: 2%;}
 
 #about {
   color: white;
@@ -163,7 +168,7 @@ aside {
 #about a,
 #about a:visited {
   color: white;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 #about h2, #submit h2 {
@@ -200,6 +205,9 @@ Sidebar & Map
     box-shadow: 0 3px 14px rgba(0,0,0, 0.3);
     width: 100%; }
 
+#youtube-video {
+  display: none;
+}
 @media (min-width: 800px) {  
 
   /*HEADER*/
@@ -257,6 +265,15 @@ Sidebar & Map
     margin: 0% 3%;
     display: inline-block;
     overflow: scroll;
+  }
+
+  #youtube-video {
+  width: 80%;
+  margin: 0px auto;
+  }
+
+  #youtube-video iframe {
+  width: 100%;
   }
 }
 
