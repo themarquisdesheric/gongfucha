@@ -15,7 +15,6 @@ function initMap() {
   const locations = TeaLocation.all;
   //loop through locations array and populate map with markers
   for (let i = 0; i < locations.length; i++) {
-    let url = placesUrl(locations[i].shopname);
 
     //send GET request to Places Details API for shop info
     $.get(`/maps?query=${locations[i].shopname}`).done(function(response) {
@@ -79,15 +78,6 @@ function showMarkers() {
   markers.forEach(marker => {
     marker.setMap(map);
   });
-}
-
-//format the URL for the call to Places API
-function placesUrl(shopname) {
-  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${shopname}&key=${PLACES_KEY}`
-}
-//format the URL for the call to Places Details API
-function placeDetailsUrl(id) {
-  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${PLACES_KEY}`
 }
 
 function isOpen(shop) {
