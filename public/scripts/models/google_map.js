@@ -7,8 +7,8 @@ let gMap;
 function initMap() {
   //initialize map and center it
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 1,
-    center: {lat: 45.549863, lng: -122.675790},
+    zoom: 2,
+    center: {lat: 24.447663, lng: -176.115160},
     scrollwheel: false
   });
 
@@ -18,25 +18,17 @@ function initMap() {
 
     //send GET request to Places Details API for shop info
     $.get(`/maps?query=${locations[i].shopname}`).done(function(response) {
-      console.log('Place Details response: ', response);
-
 
       //check if shop is open
 
-      console.log(response.result.name);
-
       if (response.result.hasOwnProperty('opening_hours')) {
-        console.log('OUTER if is evaluating to true', response.result.hasOwnProperty('opening_hours'));
         //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
         if (response.result.opening_hours.open_now) {
-          console.log('INNER IF IS TRUE', response.result.opening_hours.open_now);
           openString = '<p style="color:#0f0;">Open now</p>';
         } else {
-          console.log('INNER IF IS FALSE', response.result.opening_hours.open_now);
           openString = '<p style="color:#f00;">Closed now</p>';
         }
       } else {
-        console.log(response.result.name + ' doesn\'t have opening hours');
         openString = '<p style="color:#f00;"></p>';
       }
 

@@ -47,7 +47,6 @@ TeaLocation.insertLocation = function (data, callback) {
     street: data[3].value, city: data[4].value, state: data[5].value, zip: data[6].value,
     country: data[7].value, category: data[8].value
   }
-  console.log('newLocation:', data[0].value);
   $.ajax({
     url: '/tea', 
     method: 'POST',
@@ -56,7 +55,6 @@ TeaLocation.insertLocation = function (data, callback) {
   })
     .then( 
       results => {
-      console.log('insert success', results)
       TeaLocation.loadAll(results);
       callback();
     }
