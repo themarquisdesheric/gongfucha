@@ -2,6 +2,7 @@
 
 const markers = [];
 let open = '';
+let gMap;
 
 function initMap() {
   //initialize map and center it
@@ -16,18 +17,15 @@ function initMap() {
   for (let i = 0; i < locations.length; i++) {
     let url = placesUrl(locations[i].shopname);
 
-    // $.get(`/maps?query=${locations[i].shopname}`)
-    //   .then(response => {
-    //     console.log(locations[i].shopname, response)
-    //   });
-
     //send GET request to Places Details API for shop info
     $.get(`/maps?query=${locations[i].shopname}`).done(function(response) {
       console.log('Place Details response: ', response);
 
       let marker = createMarker(response, map);
-
       let infoWindow = createInfoWindow(response, locations[i]);
+
+      //check if shop is open
+      isOpen(response.result);
 
       //click handler to open info windows
       marker.addListener('click', function() {
@@ -45,6 +43,7 @@ function initMap() {
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
   });
+  gMap = map;
 }
 
 function createMarker(res, map) {
@@ -100,4 +99,15 @@ function isOpen(shop) {
       open = '<p style="color:#f00;">Closed now</p>';
     }
   }
+}
+
+function showResultMarkers() {
+  removeMarkers();
+  $('.shopsection:visible').each((index, shop) => {
+    let teaLocationId = parseInt($(shop).attr('data-tea-location-id'));
+    let teaLocation = TeaLocation.all.find(tl => {
+      return tl.tealocation_id === teaLocationId;
+    });
+    teaLocation.marker.setMap(gMap);
+  });
 }

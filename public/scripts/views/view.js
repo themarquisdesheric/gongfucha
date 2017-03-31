@@ -44,7 +44,7 @@ view.populateFilters = function () {
 };
 
 //Event listener and handler for Category
-view.tags = ['init'];
+view.tags = [];
 
 view.toggleButton = function () {
   $('.filter').on('click', "div", function (e) {
@@ -62,16 +62,20 @@ view.toggleButton = function () {
 };
 
 view.handleCategoryFilter = function() {
-    $('article').hide();
-    if (view.tags) {
-      view.tags.map(function(i) {
-        $(`article[data-category="${(i)}"]`).fadeIn();
-        $(`article[data-city="${(i)}"]`).fadeIn();
-      })
-    } else {
-      $('article').fadeIn();
-      $('article.template').hide();
-  };
+  $('article').hide();
+  if (!view.tags.length) {
+    $('article').fadeIn();
+    $('article.template').hide();
+  } else if (view.tags) {
+    view.tags.map(function(i) {
+      $(`article[data-category="${(i)}"]`).fadeIn();
+      $(`article[data-city="${(i)}"]`).fadeIn();
+      showResultMarkers();
+    });
+  } else {
+    $('article').fadeIn();
+    $('article.template').hide();
+  }
 };
 
 /*------------------------------
@@ -97,6 +101,7 @@ $("#new-tea-location").submit(function(event) {
   // });
   console.log(newLocation);
   //append new TeaLocation to database
+  
   TeaLocation.insertLocation(newLocation, view.initIndexPage);
 });
 
