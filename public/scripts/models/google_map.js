@@ -74,20 +74,19 @@ function removeMarkers() {
   });
 }
 
-//we need to tie into the map which is currently scoped to the initMap, so this DOESN'T WORK FOR NOW
 function showMarkers() {
   markers.forEach(marker => {
-    marker.setMap(map);
+    marker.setMap(gMap);
   });
 }
 
 //format the URL for the call to Places API
 function placesUrl(shopname) {
-  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${shopname}&key=${PLACES_KEY}`
+  return `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${shopname}&key=${process.env.API_KEY}`
 }
 //format the URL for the call to Places Details API
 function placeDetailsUrl(id) {
-  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${PLACES_KEY}`
+  return `https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=${process.env.API_KEY}`
 }
 
 function isOpen(shop) {
