@@ -52,7 +52,6 @@ view.toggleButton = function () {
     var idx = view.tags.indexOf(e.target.textContent);
       if (idx === -1) {
         view.tags.push(e.target.textContent);
-        console.log("Filtered array:", view.tags);
         view.handleCategoryFilter();
       } else {
         view.tags.splice(idx, 1);
