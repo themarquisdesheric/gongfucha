@@ -1,7 +1,7 @@
 'use strict';
 
 const markers = [];
-let open = '';
+let openString = '';
 let gMap;
 
 function initMap() {
@@ -20,12 +20,28 @@ function initMap() {
     $.get(`/maps?query=${locations[i].shopname}`).done(function(response) {
       console.log('Place Details response: ', response);
 
-      let marker = createMarker(response, map);
-      let infoWindow = createInfoWindow(response, locations[i]);
 
       //check if shop is open
-      isOpen(response.result);
 
+      console.log(response.result.name);
+
+      if (response.result.hasOwnProperty('opening_hours')) {
+        console.log('OUTER if is evaluating to true', response.result.hasOwnProperty('opening_hours'));
+        //if hours are listed, set the info box as being OPEN NOW or CLOSED NOW
+        if (response.result.opening_hours.open_now) {
+          console.log('INNER IF IS TRUE', response.result.opening_hours.open_now);
+          openString = '<p style="color:#0f0;">Open now</p>';
+        } else {
+          console.log('INNER IF IS FALSE', response.result.opening_hours.open_now);
+          openString = '<p style="color:#f00;">Closed now</p>';
+        }
+      } else {
+        console.log(response.result.name + ' doesn\'t have opening hours');
+        openString = '<p style="color:#f00;"></p>';
+      }
+
+      let marker = createMarker(response, map);
+      let infoWindow = createInfoWindow(response, locations[i]);
       //click handler to open info windows
       marker.addListener('click', function() {
         infoWindow.open(map, marker);
@@ -56,9 +72,9 @@ function createInfoWindow(res, shop) {
   return new google.maps.InfoWindow({
     content: `<p style="font-weight:bold;">${shop.shopname}</p>
               <p>${res.result.formatted_address}</p>
-              ${open}
-              <p>${res.result.formatted_phone_number}</p>
-              <p><a href="${res.result.website}">${res.result.website}</a></p>`,
+              ${openString}
+              <p>${res.result.formatted_phone_number || ''}</p>
+              <p><a href="${res.result.website}">${res.result.website || ''}</a></p>`,
     maxWidth: 120
   });
 }
