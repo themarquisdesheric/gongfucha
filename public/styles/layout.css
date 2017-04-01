@@ -155,7 +155,7 @@ aside {
   font-style: italic; }
 
 #about, #submit {
-  padding: 5% 15%; 
+  padding: 5% 7% 0% 7%; 
   padding-bottom: 2%;}
 
 #about {
@@ -208,8 +208,18 @@ Sidebar & Map
 #youtube-video {
   display: none;
 }
-@media (min-width: 800px) {  
 
+#tea-sidebar { /*Modifications to side bar in mobile view here*/
+  width: 70%;
+    height: 430px;
+    margin: 2% 15% 2% 15%;
+    text-align: center;
+    display: inline-block;
+    overflow: scroll;
+}
+
+
+@media (min-width: 800px) {  
   /*HEADER*/
   nav {
     position: absolute;
