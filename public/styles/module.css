@@ -2,3 +2,185 @@
   Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.
 */
 
+/*-----------
+Landing Page
+------------*/
+
+/*HEADER*/
+#landing-page {
+  color: ghostwhite;
+}
+
+#teapot-logo-div {
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: rgba(207, 128, 0, .5);
+  transition-duration: 500ms;
+}
+
+#teapot-logo-div:hover {
+  box-shadow: 0px 0px 10px 3px cyan;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+}
+
+/*Nav*/
+nav ul li {
+  font-size: 1.5em;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  text-shadow: 1px 1px 4px rgba(136, 132, 140, .9);
+}
+
+nav ul li:hover {
+  background-color: rgba(52, 135, 184, .7);
+}
+
+#first-tab {
+  border-top: 1px solid white;
+}
+
+nav ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-shadow: 1px 1px 1px cyan;
+}
+
+/*WELCOME TEXT*/
+
+#welcome-text {
+  border-radius: 30px;
+  background-color: rgba(136, 132, 140, .5);
+  text-shadow: .2px .2px 4px black;
+  box-shadow: 0 3px 30px rgba(0,0,0, 0.3);
+}
+
+#welcome-text h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+  margin: 10%;
+}
+
+#welcome-text h3 {
+  font-size: 1em;
+}
+
+#arrow {
+  font-size: 50px;
+  animation: bounce 2s ease-in-out
+  }
+
+@keyframes bounce {
+  0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+  40%  { -webkit-transform: translateY(-20px); }
+	80% { -webkit-transform: translateY(-10px); }
+}
+
+/*-----------
+Map Styles
+------------*/
+
+
+/*-----------
+Media Queries
+------------*/
+
+@media (min-width: 800px) { 
+
+  /*header*/
+  header {
+    line-height: 1em;
+    font-size: .75em;
+  }
+
+  nav {
+    border-radius: 5px;
+    text-shadow: .5px .5px 2px grey;
+  }
+
+  nav ul li {
+    border: none;
+    border-radius: 30px;
+    font-size: 1.15em;
+  }
+
+  .tab:hover {
+    text-shadow: 1px 1px 1px 5px darkturquoise;
+  }
+
+  #first-tab {
+  border-left: none;
+  border-top: none; 
+  }
+
+  /*Welcome text*/
+
+  #welcome-text h1 {
+    font-size: 2.5em;
+    margin: 1.75%; 
+  }
+
+  #welcome-text h3 {
+    font-size: 1.25em;
+    margin: 1.75%; 
+  }
+}
+
+
+/*-----------
+Submit & Forms
+------------*/
+form {
+  margin: 5% 0% 5% 0%; }
+
+.two-field-form { 
+  display: inline-block;
+  width: 45%;
+  margin: 5px 5px 5px 0px; }
+
+.three-field-form { 
+  display: inline-block;
+  width: 30%;
+  margin: 5px 5px 5px 0px; }
+
+.full-width {
+  width: 100%;
+  box-sizing: border-box; }
+
+input,
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+
+.button:hover,
+.button:focus, {
+  color: #333;
+  background-color:#33C3F0;
+  border-color: #888;
+  outline: 0; 
+  }

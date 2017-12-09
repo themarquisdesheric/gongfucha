@@ -1,3 +1,46 @@
 /* 
   Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like THIS.
 */
+
+body {
+  background-color: white;
+  width: 100%;
+  font-size: 1.15em;
+  line-height: 2em;
+  color: black;
+  overflow-x: hidden;
+	font-family: 'Poiret One', cursive;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.625em;
+}
+
+h3 {
+  font-size: 1.375em;
+}
+
+main {
+  margin-top: 5%;
+}
+
+/*Pointer for arrow*/
+#arrow {
+  cursor: pointer;
+}
+
+/*FONTS*/
+/*@font-face {
+	font-family: 'levibrush';
+	src: url('/fonts/levibrush-webfont.ttf') format(truetype), url('/fonts/levibrush-webfont.otf') format(opentype); ; 
+}
+
+@font-face {
+	font-family: 'trench';
+	src: url('/fonts/trench-100-free-webfont.otf') format(opentype), url('/fonts/trench-100-free-webfont.ttf') format(truetype); ; 
+}*/
+
