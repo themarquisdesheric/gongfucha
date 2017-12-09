@@ -19,10 +19,6 @@ We use the Google Maps API to grab information about tea shops all over the worl
 #### User-curated database
 Compares the finishing times of all NYC finishers against their gender, age, nationality and longest training run (assuming 17 weeks prior to the marathon was their training cycle).
 
-
-## Favorite Challenges
-* WIP
-
 ## Special Thanks
 * Amy Chen
 * Aaron Krause
